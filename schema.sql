@@ -64,6 +64,7 @@ CREATE TABLE vendor (
     actual_cost INT,
     contract VARCHAR,
     img VARCHAR,
+    notes VARCHAR
 ),
 
 CREATE TABLE calendar (
@@ -73,4 +74,5 @@ CREATE TABLE calendar (
     date DATE,
     start_time TIME,
     end_time TIME,
+    notes VARCHAR
 )
