@@ -23,6 +23,8 @@ CREATE TABLE event (
     event_name VARCHAR NOT NULL,
     event_date DATE,
     budget INT,
+    estimated_guests INT,
+    invited_guests INT,
     user_id INT NOT NULL,
 ),
 
