@@ -5,7 +5,7 @@ CREATE DATABASE tothealtar;
 USE tothealtar;
 
 CREATE TABLE users (
-    ID INT AUTO_INCREMENT PRIMARY KEY,
+    ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL,
     email VARCHAR(50) NOT NULL,
@@ -14,14 +14,14 @@ CREATE TABLE users (
 );
 
 CREATE TABLE login (
-    ID INT AUTO_INCREMENT PRIMARY KEY,
+    ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) NOT NULL,
-    password VARCHAR(15) NOT NULL,
+    password VARCHAR(100) NOT NULL,
     user_id INT
 );
 
 CREATE TABLE event (
-    ID INT AUTO_INCREMENT PRIMARY KEY,
+    ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     event_name VARCHAR(50) NOT NULL,
     event_date DATE,
     bride_groom1 VARCHAR(100) NOT NULL,
@@ -32,7 +32,7 @@ CREATE TABLE event (
 );
 
 CREATE TABLE address (
-    ID INT AUTO_INCREMENT PRIMARY KEY,
+    ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     line1 VARCHAR(50),
     line2 VARCHAR(50),
     city VARCHAR(50),
@@ -42,12 +42,12 @@ CREATE TABLE address (
 );
 
 CREATE TABLE category (
-    ID INT AUTO_INCREMENT PRIMARY KEY,
+    ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE payment (
-    ID INT AUTO_INCREMENT PRIMARY KEY,
+    ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     vendor_id INT NOT NULL,
     type VARCHAR(50) NOT NULL,
     date DATE NOT NULL,
@@ -56,13 +56,13 @@ CREATE TABLE payment (
 );
 
 CREATE TABLE vendor (
-    ID INT AUTO_INCREMENT PRIMARY KEY,
+    ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     event_id INT,
     category_id INT,
     date_id DATE,
     vendor_name VARCHAR(50),
     contact_name VARCHAR(50),
-    phone_number INT,
+    phone_number VARCHAR(50),
     email VARCHAR(50),
     address_id INT,
     projected_cost INT,
@@ -73,7 +73,7 @@ CREATE TABLE vendor (
 );
 
 CREATE TABLE calendar (
-    ID INT AUTO_INCREMENT PRIMARY KEY,
+    ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(50),
     vendor_id INT,
     date DATE,
