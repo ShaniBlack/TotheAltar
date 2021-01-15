@@ -24,9 +24,10 @@ CREATE TABLE event (
     ID INT AUTO_INCREMENT PRIMARY KEY,
     event_name VARCHAR(50) NOT NULL,
     event_date DATE,
+    bride_groom1 VARCHAR(100) NOT NULL,
+    bride_groom2 VARCHAR(100) NOT NULL,
     budget INT,
     estimated_guests INT,
-    invited_guests INT,
     user_id INT NOT NULL
 );
 
