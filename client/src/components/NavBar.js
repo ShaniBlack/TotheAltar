@@ -1,5 +1,6 @@
 import React from "react";
-import "react-bulma-components/dist/react-bulma-components.min.css"
+import "react-bulma-components/dist/react-bulma-components.min.css";
+
 
 const NavBar = () => {
     return (
@@ -13,7 +14,12 @@ const NavBar = () => {
     </div>
     <div class="navbar-menu">
         <div class="navbar-end">
-            <a class="navbar-item has-text-black" href="./home">
+        <div class="navbar-brand">
+            <a  class="navbar-item" href="https://images.unsplash.com/photo-1579726670131-487ecc8e1e8a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjd8fHJpbmdzfGVufDB8fDB8&auto=format&fit=crop&w=500&q=60">
+                <img src="./images" alt="logo_transparent" width="112" height="28">
+                    </img>
+            </a>
+             <a class="navbar-item has-text-black" href="./home">
                 My Events
             </a>
             <a class="navbar-item has-text-black" href="./survey">
@@ -28,6 +34,7 @@ const NavBar = () => {
             <a class="navbar-item has-text-black" href="./logout">
                 Logout
             </a> ​
+            </div>
         </div>
     </div>
 </nav>
