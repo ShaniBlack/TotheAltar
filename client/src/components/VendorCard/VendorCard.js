@@ -1,5 +1,6 @@
 import React from "react";
 import "./vendorcard.css";
+import "react-bulma-components/dist/react-bulma-components.min.css";
 
 function VendorCard() {
   return (

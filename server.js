@@ -5,6 +5,9 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+// Requiring our models for syncing
+var db = require("./models");
+
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -22,6 +25,8 @@ if (process.env.NODE_ENV === 'production') {
 // All you have to do is make sure that you have an .env file with input values for the atlas db connection and plug that into heroku upon deployment as well
 
 // Start the API server
-app.listen(PORT, function () {
-  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+db.sequelize.sync().then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
 });
