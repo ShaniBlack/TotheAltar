@@ -18,15 +18,17 @@ if (process.env.NODE_ENV === 'production') {
 // Add routes, both API and view
 // app.use(routes);
 
-// Connect to the Mongo DB
-// mongoose.connect(
-//   process.env.MONGODB_URI || 'mongodb://localhost/reactreadinglist'
-// );
+
 // All you have to do is make sure that you have an .env file with input values for the atlas db connection and plug that into heroku upon deployment as well
 
-// Start the API server
-db.sequelize.sync().then(function() {
-  app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
+// Syncing our sequelize models and then starting our Express app
+// =============================================================
+db.sequelize.sync({ force: true }).then(() => {
+  app.listen(PORT, () => {
+    console.log(
+      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
+      PORT,
+      PORT
+    );
   });
 });
