@@ -22,13 +22,15 @@ const NavBar = () => {
              <a className="navbar-item has-text-black" href="./home">
                 My Events
             </a>
-            <a className="navbar-item has-text-black" href="./survey">
-                Survey
+            <a className="navbar-item has-text-black" href="./vendors">
+                Vendors
             </a>
-            <a className="navbar-item has-text-black is-disabled" href="./budget">
+            {/* hidden for future features */}
+            <a className="navbar-item has-text-black is-hidden" href="./budget">
                 Budget
             </a>
-            <a className="navbar-item has-text-black is-disabled" href="./calendar">
+            {/* hidden for future features */}
+            <a className="navbar-item has-text-black is-hidden" href="./calendar">
                 Calendar
             </a>
             <a className="navbar-item has-text-black" href="./logout">
