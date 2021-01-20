@@ -20,10 +20,7 @@ const NavBar = () => {
                     </img>
             </figure> */}
              <a className="navbar-item has-text-black" href="./home">
-                My Events
-            </a>
-            <a className="navbar-item has-text-black" href="./vendors">
-                Vendors
+                Home
             </a>
             {/* hidden for future features */}
             <a className="navbar-item has-text-black is-hidden" href="./budget">
