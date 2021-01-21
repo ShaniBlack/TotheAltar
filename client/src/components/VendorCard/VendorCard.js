@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./vendorcard.css";
-import VendorAPI from "../../utils/VendorAPI";
+import API from "../../utils/API";
 import DeleteBtn from "../DeleteBtn";
 
 //import "react-bulma-components/dist/react-bulma-components.min.css";
 
-function VendorCard(props) {
+export default function VendorCard({props}) {
   const [vendors, setVendors] = useState([])
   //const [formObject, setFormObject] = useState({})
 
@@ -15,7 +15,7 @@ function VendorCard(props) {
   }, [])
 
   function loadVendors() {
-    VendorAPI.getVendors()
+    API.getVendors()
       .then(res => 
         setVendors(res.data)
       )
@@ -23,7 +23,7 @@ function VendorCard(props) {
   };
 
   function deleteVendor(id) {
-    VendorAPI.deleteVendor(id)
+    API.deleteVendor(id)
       .then(res => loadVendors())
       .catch(err => console.log(err));
   }
@@ -34,7 +34,7 @@ function VendorCard(props) {
       <div className="card">
       <div className="card-image">
         <figure className="image is-4by3">
-          <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder"></img>
+          <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder"></img>
         </figure>
       </div>
       <div className="card-content">
@@ -45,16 +45,16 @@ function VendorCard(props) {
             </figure>
           </div>
           <div className="media-content">
-            <p className="title is-4">{props.vendor_name}</p>
-            <p className="subtitle is-6">{props.contact_name}</p>
+            <p className="title is-4">{API.vendor_name}</p>
+            <p className="subtitle is-6">{API.contact_name}</p>
           </div>
         </div>
 
-        <p className="subtitle is-6">{props.phone_number}</p>
-        <p className="subtitle is-6">{props.projected_cost}</p>
-        <p className="subtitle is-6">{props.actual_cost}</p>
+        <p className="subtitle is-6">{API.phone_number}</p>
+        <p className="subtitle is-6">{API.projected_cost}</p>
+        <p className="subtitle is-6">{API.actual_cost}</p>
         <div className="content">
-          {props.notes}
+          {API.notes}
           <a href="../images/contract.pdf">Contract</a>
           {vendors.map(vendor => (
               <DeleteBtn onClick={() => deleteVendor(vendor._id)}/>
@@ -66,5 +66,3 @@ function VendorCard(props) {
     </div>
   );
 }
-
-export default VendorCard;
