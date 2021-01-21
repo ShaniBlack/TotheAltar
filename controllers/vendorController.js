@@ -1,4 +1,4 @@
-const db = require("../models/vendor");
+const db = require("../models");
 
 // Defining methods for the vendorController
 module.exports = {

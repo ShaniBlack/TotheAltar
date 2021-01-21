@@ -1,4 +1,4 @@
-const db = require("../models/event");
+const db = require("../models");
 
 // Defining methods for the eventController
 module.exports = {
