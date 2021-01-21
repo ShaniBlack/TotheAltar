@@ -36,9 +36,9 @@ export default function Login(props) {
           <button type="submit">Submit</button>
         </div>
       </form>
-      <div>
+      {/* <div>
         <button>Make a new account</button>
-      </div>
+      </div> */}
     </div>
   );
 }

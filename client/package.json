@@ -5,6 +5,9 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
+    "axios": "^0.21.1",
+    "bulma": "^0.8.2",
+    "cors": "^2.8.5",
     "react": "^16.13.1",
     "react-bulma-components": "^3.4.0",
     "react-dom": "^16.13.1",
@@ -16,5 +19,17 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

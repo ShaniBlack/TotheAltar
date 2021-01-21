@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import NavBar from "./components/navbar/NavBar";
 import "./App.css";
-import Login from "../Login/Login";
+import Login from "./components/Login/Login";
+import Dashboard from "./components/Login/Dashboard";
+import Preferences from "./components/Login/Preferences";
 // import Events from "./pages/Events";
 // import Vendors from "./pages/Vendors";
 
@@ -24,10 +26,19 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="wrapper">
       <NavBar />
-      {/* <Vendors />
-      <Events /> */}
+      <h1>Application</h1>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/dashboard">
+            <Dashboard />
+          </Route>
+          <Route path="/preferences">
+            <Preferences />
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
