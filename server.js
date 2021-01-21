@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 
 // const routes = require('./routes');
 const app = express();
@@ -11,6 +12,15 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+
+app.use(cors());
+
+app.use("/login", (req, res) => {
+  res.send({
+    token: "test123",
+  });
+});
+
 // Add routes, both API and view
 // app.use(routes);
 
