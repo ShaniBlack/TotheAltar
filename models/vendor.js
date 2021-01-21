@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Vendor.belongsTo(models.event)
+      Vendor.belongsTo(models.Event)
     }
   };
   Vendor.init({
