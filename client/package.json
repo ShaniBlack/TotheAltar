@@ -1,12 +1,15 @@
 {
   "name": "tothealtar",
   "version": "0.1.0",
+  "description": "tothealter Demo",
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
-    "axios": "^0.18.0",
-    "bulma": "^0.9.1",
+    "axios": "^0.21.1",
+    "bulma": "^0.8.2",
+    "cors": "^2.8.5",
     "react": "^16.13.1",
+    "react-bulma-components": "^3.4.0",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3"
@@ -17,10 +20,16 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }

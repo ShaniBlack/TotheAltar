@@ -30,21 +30,21 @@ CREATE TABLE event (
     estimated_guests INT,
     user_id INT NOT NULL
 );
-
-CREATE TABLE address (
-    ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    line1 VARCHAR(50),
-    line2 VARCHAR(50),
-    city VARCHAR(50),
-    state VARCHAR(2),
-    zip INT,
-    country VARCHAR(2)
-);
-
-CREATE TABLE category (
-    ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(50) NOT NULL
-);
+-- do not need --
+-- CREATE TABLE address (
+--     ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+--     line1 VARCHAR(50),
+--     line2 VARCHAR(50),
+--     city VARCHAR(50),
+--     state VARCHAR(2),
+--     zip INT,
+--     country VARCHAR(2)
+-- );
+-- do not need --
+-- CREATE TABLE category (
+--     ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+--     name VARCHAR(50) NOT NULL
+-- );
 
 CREATE TABLE payment (
     ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -58,7 +58,7 @@ CREATE TABLE payment (
 CREATE TABLE vendor (
     ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     event_id INT,
-    category_id INT,
+    -- category_id INT,
     date_id DATE,
     vendor_name VARCHAR(50),
     contact_name VARCHAR(50),
