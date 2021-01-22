@@ -16,12 +16,30 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Event.init({
-    event_name: DataTypes.STRING,
-    event_date: DataTypes.DATE,
-    bride_groom1: DataTypes.STRING,
-    bride_groom2: DataTypes.STRING,
-    budget: DataTypes.INTEGER,
-    estimated_guest: DataTypes.INTEGER
+    event_name: {
+      type: DataTypes.STRING,
+      allowNull: false
+  },
+  event_date: {
+      type: DataTypes.DATE,
+      allowNull: false
+  },
+  bride_groom1: {
+      type: DataTypes.STRING,
+      allowNull: false
+  },
+  bride_groom2: {
+      type: DataTypes.STRING,
+      allowNull: false
+  },
+  budget: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+  },
+  estimated_guests: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+  }
   }, {
     sequelize,
     modelName: 'Event',
