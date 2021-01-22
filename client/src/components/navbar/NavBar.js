@@ -1,7 +1,10 @@
 import React from "react";
 import "react-bulma-components/dist/react-bulma-components.min.css";
+import { useAuth0 } from "@auth0/auth0-react";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
+  const { logout } = useAuth0();
   return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="container">
@@ -36,9 +39,15 @@ const NavBar = () => {
             >
               Calendar
             </a>
-            <a className="navbar-item has-text-black" href="./logout">
-              Logout
-            </a>{" "}
+            <Link
+              className="navbar-item has-text-black"
+              onClick={() => logout({ returnTo: window.location.origin })}
+            >
+              Log Out
+            </Link>
+            <Link className="navbar-item has-text-black" to="/login">
+              Log in
+            </Link>
             ​
           </div>
         </div>
