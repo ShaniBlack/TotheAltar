@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@auth0/auth0-react": "^1.2.0",
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "cors": "^2.8.5",
     "express": "^4.16.3",
     "if-env": "^1.0.4",
