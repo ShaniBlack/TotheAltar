@@ -4,12 +4,12 @@ const usersController = require("../../controllers/usersController");
 // Matches with "/api/event"
 router.route("/")
   .get(usersController.findAll)
-  .post(usersController.create);
+  .post(usersController.findOrCreate);
 
 // Matches with "/api/event/:id"
 router
   .route("/:id")
-  .get(usersController.findById)
+  .get(usersController.findByPk)
   .put(usersController.update)
   .delete(usersController.remove);
 

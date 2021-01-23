@@ -4,12 +4,12 @@ const eventController = require("../../controllers/eventController");
 // Matches with "/api/event"
 router.route("/")
   .get(eventController.findAll)
-  .post(eventController.create);
+  .post(eventController.findOrCreate);
 
 // Matches with "/api/event/:id"
 router
   .route("/:id")
-  .get(eventController.findById)
+  .get(eventController.findByPk)
   .put(eventController.update)
   .delete(eventController.remove);
 

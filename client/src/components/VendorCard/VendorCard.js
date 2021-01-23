@@ -1,68 +1,43 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./vendorcard.css";
-import API from "../../utils/API";
 import DeleteBtn from "../DeleteBtn";
 
-//import "react-bulma-components/dist/react-bulma-components.min.css";
-
-export default function VendorCard({props}) {
-  const [vendors, setVendors] = useState([])
-  //const [formObject, setFormObject] = useState({})
-
-  
-  useEffect(() => {
-    loadVendors()
-  }, [])
-
-  function loadVendors() {
-    API.getVendors()
-      .then(res => 
-        setVendors(res.data)
-      )
-      .catch(err => console.log(err));
-  };
-
-  function deleteVendor(id) {
-    API.deleteVendor(id)
-      .then(res => loadVendors())
-      .catch(err => console.log(err));
-  }
-
-
+export default function VendorCard(props) {
   return (
-    <div>
-      <div className="card">
-      <div className="card-image">
-        <figure className="image is-4by3">
-          <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder"></img>
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <img
+            src="https://bulma.io/images/placeholders/1280x960.png"
+            alt="Placeholder image"
+          ></img>
         </figure>
       </div>
-      <div className="card-content">
-        <div className="media">
-          <div className="media-left">
-            <figure className="image is-48x48">
-              <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder"></img>
+      <div class="card-content">
+        <div class="media">
+          <div class="media-left">
+            <figure class="image is-48x48">
+              <img
+                src="https://bulma.io/images/placeholders/96x96.png"
+                alt="Placeholder image"
+              ></img>
             </figure>
           </div>
-          <div className="media-content">
-            <p className="title is-4">{API.vendor_name}</p>
-            <p className="subtitle is-6">{API.contact_name}</p>
+          <div class="media-content">
+            <p class="title is-4">{props.vendor}</p>
+            <p class="subtitle is-6">@{props.contact}</p>
           </div>
         </div>
 
-        <p className="subtitle is-6">{API.phone_number}</p>
-        <p className="subtitle is-6">{API.projected_cost}</p>
-        <p className="subtitle is-6">{API.actual_cost}</p>
-        <div className="content">
-          {API.notes}
+        <div class="media-content">
+          <p className="subtitle is-6">{props.phone}</p>
+          <p className="subtitle is-6">{props.projected_cost}</p>
+          <p className="subtitle is-6">{props.actual_cost}</p>
+          <p className="subtitle is-6">{props.notes}</p>
           <a href="../images/contract.pdf">Contract</a>
-          {vendors.map(vendor => (
-              <DeleteBtn onClick={() => deleteVendor(vendor._id)}/>
-                 
-                ))}
+          <DeleteBtn onClick={() => props.deleteVendor(props._id)} />
         </div>
       </div>
-    </div>
     </div>
   );
 }

@@ -4,19 +4,20 @@ const db = require("../models");
 module.exports = {
   findAll: function(req, res) {
     db.Vendor
-      .find(req.query)
+      .findAll(req.query)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  findById: function(req, res) {
+
+  findByPk: function(req, res) {
     db.Vendor
-      .findById(req.params.id)
+      .findByPk(req.params.id)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  create: function(req, res) {
+  findOrCreate: function(req, res) {
     db.Vendor
-      .create(req.body)
+      .findOrCreate(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -28,7 +29,7 @@ module.exports = {
   },
   remove: function(req, res) {
     db.Vendor
-      .findById({ _id: req.params.id })
+      .findByPk({ _id: req.params.id })
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
