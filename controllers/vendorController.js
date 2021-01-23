@@ -15,22 +15,22 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  findOrCreate: function(req, res) {
+  create: function(req, res) {
     db.Vendor
-      .findOrCreate(req.body)
+      .create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {
     db.Vendor
-      .findOneAndUpdate({ _id: req.params.id }, req.body)
+      .update({ _id: req.params.id }, req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  remove: function(req, res) {
+  destroy: function(req, res) {
     db.Vendor
       .findByPk({ _id: req.params.id })
-      .then(dbModel => dbModel.remove())
+      .then(dbModel => dbModel.destroy())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   }

@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import VendorCard from "../components/VendorCard/VendorCard";
-import Wrapper from "../components/Wrapper";
-import Title from "../components/Title";
 import API from "../utils/API";
-//import DeleteBtn from "../DeleteBtn";
+import "react-bulma-components/dist/react-bulma-components.min.css";
+import Collapsible from 'react-collapsible';
 
 export default function Vendors() {
   const [vendors, setVendors] = useState([]);
-  //const [formObject, setFormObject] = useState({})
 
   useEffect(() => {
     loadVendors();
@@ -19,27 +17,34 @@ export default function Vendors() {
       .catch((err) => console.log(err));
   }
 
-  function deleteVendor(id) {
-    API.deleteVendor(id)
+  function deleteCard() {
+    API.deleteVendor()
       .then((res) => loadVendors())
       .catch((err) => console.log(err));
   }
 
   return (
-    <Wrapper>
-      <Title>Vendors List</Title>
-      {vendors.map((vendor) => (
-        <VendorCard
-          id={vendor.id}
-          key={vendor.id}
-          vendor={vendor.vendor_name}
-          contact={vendor.contact_name}
-          phone={vendor.phone_number}
-          projected_cost={vendor.projected_cost}
-          actual_cost={vendor.actual_cost}
-          notes={vendor.notes}
-        />
-      ))}
-    </Wrapper>
+    <Collapsible trigger={vendors.category}>
+    <section class="level">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title"></h1>
+          {vendors.map((vendor) => (
+            <VendorCard
+              deleteCard={deleteCard}
+              id={vendor.id}
+              key={vendor.id}
+              vendor={vendor.vendor_name}
+              contact={vendor.contact_name}
+              phone={vendor.phone_number}
+              projected_cost={vendor.projected_cost}
+              actual_cost={vendor.actual_cost}
+              notes={vendor.notes}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+    </Collapsible>
   );
 }

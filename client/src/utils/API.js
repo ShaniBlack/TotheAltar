@@ -40,9 +40,13 @@ export default {
   getVendor: function(id) {
     return axios.get("/api/vendors/" + id);
   },
+  // Gets the Vendor with the given id
+  updateVendor: function(id) {
+    return axios.put("/api/vendors/" + id);
+  },
   // Deletes the Vendor with the given id
   deleteVendor: function(id) {
-    return axios.delete("/api/vendors/" + id);
+    return axios.destroy("/api/vendors/" + id);
   },
   // Saves a Vendor to the database
   saveVendor: function(vendorData) {

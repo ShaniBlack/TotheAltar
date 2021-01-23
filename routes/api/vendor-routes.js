@@ -4,13 +4,13 @@ const vendorController = require("../../controllers/vendorController");
 // Matches with "/api/vendor"
 router.route("/")
   .get(vendorController.findAll)
-  .post(vendorController.findOrCreate);
+  .post(vendorController.create);
 
 // Matches with "/api/vendor/:id"
 router
   .route("/:id")
   .get(vendorController.findByPk)
   .put(vendorController.update)
-  .delete(vendorController.remove);
+  .destroy(vendorController.destroy);
 
 module.exports = router;

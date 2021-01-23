@@ -1,8 +1,7 @@
 import React from "react";
-import "./vendorcard.css";
-import DeleteBtn from "../DeleteBtn";
 
 export default function VendorCard(props) {
+  
   return (
     <div class="card">
       <div class="card-image">
@@ -10,7 +9,7 @@ export default function VendorCard(props) {
           <img
             src="https://bulma.io/images/placeholders/1280x960.png"
             alt="Placeholder image"
-          ></img>
+          />
         </figure>
       </div>
       <div class="card-content">
@@ -20,22 +19,22 @@ export default function VendorCard(props) {
               <img
                 src="https://bulma.io/images/placeholders/96x96.png"
                 alt="Placeholder image"
-              ></img>
+              />
             </figure>
           </div>
           <div class="media-content">
-            <p class="title is-4">{props.vendor}</p>
-            <p class="subtitle is-6">@{props.contact}</p>
+            <p class="title is-4">Vendor Name: {props.vendor}</p>
+            <p class="subtitle is-6">Contact: {props.contact}</p>
           </div>
         </div>
 
         <div class="media-content">
-          <p className="subtitle is-6">{props.phone}</p>
-          <p className="subtitle is-6">{props.projected_cost}</p>
-          <p className="subtitle is-6">{props.actual_cost}</p>
-          <p className="subtitle is-6">{props.notes}</p>
-          <a href="../images/contract.pdf">Contract</a>
-          <DeleteBtn onClick={() => props.deleteVendor(props._id)} />
+          <p className="subtitle is-6">Phone Number: {props.phone}</p>
+          <p className="subtitle is-6">Projected Cost: {props.projected_cost}</p>
+          <p className="subtitle is-6">Acutal Cost: {props.actual_cost}</p>
+          <p className="subtitle is-6">Notes: {props.notes}</p>
+          <a href="../" target="_blank">View Contract  </a>
+          <button class="button is-large is-danger" onClick={() => props.deleteCard(props.id)}>Delete</button>
         </div>
       </div>
     </div>
