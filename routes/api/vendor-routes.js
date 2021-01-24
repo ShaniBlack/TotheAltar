@@ -9,8 +9,8 @@ router.route("/")
 // Matches with "/api/vendor/:id"
 router
   .route("/:id")
-  .get(vendorController.findById)
+  .get(vendorController.findByPk)
   .put(vendorController.update)
-  .delete(vendorController.remove);
+  .delete(vendorController.delete);
 
 module.exports = router;
