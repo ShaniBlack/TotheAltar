@@ -9,8 +9,8 @@ router.route("/")
 // Matches with "/api/event/:id"
 router
   .route("/:id")
-  .get(usersController.findById)
+  .get(usersController.findByPk)
   .put(usersController.update)
-  .delete(usersController.remove);
+  .delete(usersController.delete);
 
 module.exports = router;
