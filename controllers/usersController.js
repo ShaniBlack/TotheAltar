@@ -14,9 +14,9 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  findOrCreate: function(req, res) {
+  create: function(req, res) {
     db.User
-      .findOrCreate(req.body)
+      .create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -26,11 +26,20 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  remove: function(req, res) {
-    db.User
-      .findByPk({ _id: req.params.id })
-      .then(dbModel => dbModel.remove())
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+  // remove: function(req, res) {
+  //   db.User
+  //     .findByPk({ _id: req.params.id })
+  //     .then(dbModel => dbModel.remove())
+  //     .then(dbModel => res.json(dbModel))
+  //     .catch(err => res.status(422).json(err));
+  // }
+  delete: function (req, res){
+    const id = req.params.id;
+    db.User.destroy({
+      where: { id: id }
+    })
+      .then(deletedUser => {
+        res.json(deletedUser);
+      });
   }
 };

@@ -11,6 +11,6 @@ router
   .route("/:id")
   .get(vendorController.findByPk)
   .put(vendorController.update)
-  .destroy(vendorController.destroy);
+  .delete(vendorController.delete);
 
 module.exports = router;

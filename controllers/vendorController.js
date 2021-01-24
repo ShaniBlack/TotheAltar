@@ -23,15 +23,26 @@ module.exports = {
   },
   update: function(req, res) {
     db.Vendor
-      .update({ _id: req.params.id }, req.body)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+    .findByPk({ _id: req.params.id })
+    .then(dbModel => dbModel.update())
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
   },
-  destroy: function(req, res) {
-    db.Vendor
-      .findByPk({ _id: req.params.id })
-      .then(dbModel => dbModel.destroy())
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+  // delete22: function(req, res) {
+  //   db.Vendor
+  //     .findByPk({ _id: req.params.id })
+  //     .then(dbModel => dbModel.destroy())
+  //     .then(dbModel => dbModel.Sequelize.Promise.all())
+  //     .then(dbModel => res.json(dbModel))
+  //     .catch(err => res.status(422).json(err));
+  // },
+  delete: function (req, res){
+    const id = req.params.id;
+    db.Vendor.destroy({
+      where: { id: id }
+    })
+      .then(deletedVendor => {
+        res.json(deletedVendor);
+      });
   }
 };

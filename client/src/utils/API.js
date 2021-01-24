@@ -9,6 +9,10 @@ export default {
   getEvent: function(id) {
     return axios.get("/api/events/" + id);
   },
+   // Updates the Event with the given id
+   updateEvent: function(id) {
+    return axios.patch("/api/events/" + id);
+  },
   // Deletes the event with the given id
   deleteEvent: function(id) {
     return axios.delete("/api/events/" + id);
@@ -25,6 +29,10 @@ export default {
   getUser: function(id) {
     return axios.get("/api/users/" + id);
   },
+   // Updates the User with the given id
+   updateUser: function(id) {
+    return axios.patch("/api/users/" + id);
+  },
   // Deletes the user with the given id
   deleteUser: function(id) {
     return axios.delete("/api/users/" + id);
@@ -32,7 +40,9 @@ export default {
   // Saves a user to the database
   saveUser: function(userData) {
     return axios.post("/api/users", userData);
-  },  // Gets all vendors
+  }, 
+  
+  // Gets all vendors
   getVendors: function() {
     return axios.get("/api/vendors");
   },
@@ -40,13 +50,13 @@ export default {
   getVendor: function(id) {
     return axios.get("/api/vendors/" + id);
   },
-  // Gets the Vendor with the given id
+  // Updates the Vendor with the given id
   updateVendor: function(id) {
-    return axios.put("/api/vendors/" + id);
+    return axios.patch("/api/vendors/" + id);
   },
   // Deletes the Vendor with the given id
   deleteVendor: function(id) {
-    return axios.destroy("/api/vendors/" + id);
+    return axios.delete("/api/vendors/" + id);
   },
   // Saves a Vendor to the database
   saveVendor: function(vendorData) {
