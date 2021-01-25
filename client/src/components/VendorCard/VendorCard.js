@@ -35,7 +35,7 @@ export default function VendorCard(props) {
           <p className="subtitle is-6">Acutal Cost: {props.actual_cost}</p>
           <p className="subtitle is-6">Notes: {props.notes}</p>
           <a href="../" target="_blank">View Contract  </a>
-          <button className="button is-small has-background-danger-light" id="delete-btn" onClick={() => props.deleteCard(props.key)}>Delete</button>
+          <button className="button is-small has-background-danger-light" id="delete-btn" onClick={() => props.deleteCard(props.id)}>Delete</button>
           <button className="button is-small has-background-info-light" id="update-btn">Update</button>
         </div>
       </div>
