@@ -16,7 +16,14 @@
     font-size: 100;
     font-weight: bold;
 
-}
+};
+
+#user-font {
+    font-family: 'Parisienne', cursive;
+    font-size: 100;
+    font-weight: bold;
+
+};
 
 /* Events page Background styles */
 .has-bg-img {

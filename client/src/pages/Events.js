@@ -1,35 +1,33 @@
 import React from "react";
-import "./Events.css"
+import "./Events.css";
+import { useAuth0 } from "@auth0/auth0-react";
 
 export default function Events() {
+  const { user } = useAuth0();
   return (
-      <>
-    <section className="hero">
-      <div className="hero-body has-bg-image is-medium">
-        <div className="container has-text-centered" id="event-container">
-          <h1 className="title" id="hero-font">Event Name</h1>
-          <h2 className="subtitle" id="hero-font">November 15, 2021</h2>
+    <>
+      <section class="hero">
+        <div class="hero-body is-large">
+          <div className="container has-text-centered is-3 is-fullhd is-4-desktop is-12-tablet is-12-mobile has-text-black">
+            <h1 class="title" id="user-font">
+              Hi {user.name}! Welcome back!
+            </h1>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section className="hero">
-      <div className="hero-body has-bg-image is-medium">
-        <div className="container has-text-centered" id="event-container">
-          <h1 className="title" id="hero-font">Event Name</h1>
-          <h2 className="subtitle" id="hero-font">November 15, 2021</h2>
+      <section className="hero">
+        <div className="hero-body has-bg-image is-medium">
+          <div className="container has-text-centered is-3 is-fullhd is-4-desktop is-12-tablet is-12-mobile has-text-black">
+            <h1 className="title" id="hero-font">
+              Event Name
+            </h1>
+            <h2 className="subtitle" id="hero-font">
+              November 15, 2021
+            </h2>
+          </div>
         </div>
-      </div>
-    </section>
-
-    <section className="hero">
-      <div className="hero-body has-bg-image is-medium">
-        <div className="container has-text-centered" id="event-container">
-          <h1 className="title" id="hero-font">Event Name</h1>
-          <h2 className="subtitle" id="hero-font">November 15, 2021</h2>
-        </div>
-      </div>
-    </section>
-  </>
-  )
+      </section>
+    </>
+  );
 }
