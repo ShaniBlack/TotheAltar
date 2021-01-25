@@ -1,4 +1,5 @@
 import React from "react";
+// import Vendors from "./pages/Vendors.js"
 
 export default function VendorCard(props) {
   
@@ -35,6 +36,7 @@ export default function VendorCard(props) {
           <p className="subtitle is-6">Notes: {props.notes}</p>
           <a href="../" target="_blank">View Contract  </a>
           <button class="button is-small is-danger" onClick={() => props.deleteCard(props.key)}>Delete</button>
+          <button class="button is-small is-info">Update</button>
         </div>
       </div>
     </div>
