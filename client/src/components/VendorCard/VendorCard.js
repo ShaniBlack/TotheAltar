@@ -23,7 +23,7 @@ export default function VendorCard(props) {
             </figure>
           </div>
           <div class="media-content">
-            <p class="title is-4">Vendor Name: {props.vendor}</p>
+            <p class="title is-4">{props.vendor}</p>
             <p class="subtitle is-6">Contact: {props.contact}</p>
           </div>
         </div>
@@ -34,7 +34,7 @@ export default function VendorCard(props) {
           <p className="subtitle is-6">Acutal Cost: {props.actual_cost}</p>
           <p className="subtitle is-6">Notes: {props.notes}</p>
           <a href="../" target="_blank">View Contract  </a>
-          <button class="button is-large is-danger" onClick={() => props.deleteCard(props.key)}>Delete</button>
+          <button class="button is-small is-danger" onClick={() => props.deleteCard(props.key)}>Delete</button>
         </div>
       </div>
     </div>
