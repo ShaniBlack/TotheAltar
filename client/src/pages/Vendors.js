@@ -26,14 +26,14 @@ export default function Vendors() {
 
   return (
     <>
-      <section class="hero">
-        <div class="hero-body has-bg-image is-small">
+      <section className="hero">
+        <div className="hero-body has-bg-image is-small">
           <Collapsible trigger="Bakery">
-            <section class="level">
-                <div class="columns">
-                  <h1 class="title"></h1>
+            <section className="level">
+                <div className="columns">
+                  <h1 className="title"></h1>
                   {vendors.map((vendor) => (
-                    <div class="column is-one-quarter">
+                    <div className="column is-one-quarter">
                       <VendorCard
                         deleteCard={deleteCard}
                         id={vendor.id}
@@ -53,14 +53,14 @@ export default function Vendors() {
         </div>
       </section>
 
-      <section class="hero">
-        <div class="hero-body has-bg-image is-small">
+      <section className="hero">
+        <div className="hero-body has-bg-image is-small">
           <Collapsible trigger="Catering">
-            <section class="level">
-                <div class="columns">
-                  <h1 class="title"></h1>
+            <section className="level">
+                <div className="columns">
+                  <h1 className="title"></h1>
                   {vendors.map((vendor) => (
-                    <div class="column is-one-quarter">
+                    <div className="column is-one-quarter">
                       <VendorCard />
                     </div>
                   ))}
@@ -70,14 +70,14 @@ export default function Vendors() {
         </div>
       </section>
 
-      <section class="hero">
-        <div class="hero-body has-bg-image is-small">
+      <section className="hero">
+        <div className="hero-body has-bg-image is-small">
           <Collapsible trigger="Florist">
-            <section class="level">
-                <div class="columns">
-                  <h1 class="title"></h1>
+            <section className="level">
+                <div className="columns">
+                  <h1 className="title"></h1>
                   {vendors.map((vendor) => (
-                    <div class="column is-one-quarter">
+                    <div className="column is-one-quarter">
                       <VendorCard />
                     </div>
                   ))}
@@ -87,14 +87,14 @@ export default function Vendors() {
         </div>
       </section>
 
-      <section class="hero">
-        <div class="hero-body has-bg-image is-small">
+      <section className="hero">
+        <div className="hero-body has-bg-image is-small">
           <Collapsible trigger="Gown/Tux Shop 1">
-            <section class="level">
-                <div class="columns">
-                  <h1 class="title"></h1>
+            <section className="level">
+                <div className="columns">
+                  <h1 className="title"></h1>
                   {vendors.map((vendor) => (
-                    <div class="column is-one-quarter">
+                    <div className="column is-one-quarter">
                       <VendorCard />
                     </div>
                   ))}
@@ -104,14 +104,14 @@ export default function Vendors() {
         </div>
       </section>
 
-      <section class="hero">
-        <div class="hero-body has-bg-image is-small">
+      <section className="hero">
+        <div className="hero-body has-bg-image is-small">
         <Collapsible trigger="Gown/Tux Shop 2">
-            <section class="level">
-                <div class="columns">
-                  <h1 class="title"></h1>
+            <section className="level">
+                <div className="columns">
+                  <h1 className="title"></h1>
                   {vendors.map((vendor) => (
-                    <div class="column is-one-quarter">
+                    <div className="column is-one-quarter">
                       <VendorCard />
                     </div>
                   ))}
@@ -121,14 +121,14 @@ export default function Vendors() {
         </div>
       </section>
 
-      <section class="hero">
-        <div class="hero-body has-bg-image is-small" id="jeweler">
+      <section className="hero">
+        <div className="hero-body has-bg-image is-small" id="jeweler">
           <Collapsible trigger="Jeweler">
-          <section class="level">
-                <div class="columns">
-                  <h1 class="title"></h1>
+          <section className="level">
+                <div className="columns">
+                  <h1 className="title"></h1>
                   {vendors.map((vendor) => (
-                    <div class="column is-one-quarter">
+                    <div className="column is-one-quarter">
                       <VendorCard />
                     </div>
                   ))}
@@ -138,14 +138,14 @@ export default function Vendors() {
         </div>
       </section>
 
-      <section class="hero">
-        <div class="hero-body has-bg-image is-small">
+      <section className="hero">
+        <div className="hero-body has-bg-image is-small">
           <Collapsible trigger="Music">
-          <section class="level">
-                <div class="columns">
-                  <h1 class="title"></h1>
+          <section className="level">
+                <div className="columns">
+                  <h1 className="title"></h1>
                   {vendors.map((vendor) => (
-                    <div class="column is-one-quarter">
+                    <div className="column is-one-quarter">
                       <VendorCard />
                     </div>
                   ))}
@@ -155,14 +155,14 @@ export default function Vendors() {
         </div>
       </section>
 
-      <section class="hero">
-        <div class="hero-body has-bg-image is-small">
+      <section className="hero">
+        <div className="hero-body has-bg-image is-small">
           <Collapsible trigger="Officiator">
-          <section class="level">
-                <div class="columns">
-                  <h1 class="title"></h1>
+          <section className="level">
+                <div className="columns">
+                  <h1 className="title"></h1>
                   {vendors.map((vendor) => (
-                    <div class="column is-one-quarter">
+                    <div className="column is-one-quarter">
                       <VendorCard />
                     </div>
                   ))}
@@ -172,14 +172,14 @@ export default function Vendors() {
         </div>
       </section>
 
-      <section class="hero">
-        <div class="hero-body has-bg-image is-small">
+      <section className="hero">
+        <div className="hero-body has-bg-image is-small">
           <Collapsible trigger="Rentals">
-          <section class="level">
-                <div class="columns">
-                  <h1 class="title"></h1>
+          <section className="level">
+                <div className="columns">
+                  <h1 className="title"></h1>
                   {vendors.map((vendor) => (
-                    <div class="column is-one-quarter">
+                    <div className="column is-one-quarter">
                       <VendorCard />
                     </div>
                   ))}
@@ -189,14 +189,14 @@ export default function Vendors() {
         </div>
       </section>
 
-      <section class="hero">
-        <div class="hero-body has-bg-image is-small">
+      <section className="hero">
+        <div className="hero-body has-bg-image is-small">
           <Collapsible trigger="Venue">
-            <section class="level">
-                <div class="columns">
-                  <h1 class="title"></h1>
+            <section className="level">
+                <div className="columns">
+                  <h1 className="title"></h1>
                   {vendors.map((vendor) => (
-                    <div class="column is-one-quarter">
+                    <div className="column is-one-quarter">
                       <VendorCard />
                     </div>
                   ))}
@@ -206,14 +206,14 @@ export default function Vendors() {
         </div>
       </section>
 
-      <section class="hero">
-        <div class="hero-body has-bg-image is-small">
+      <section className="hero">
+        <div className="hero-body has-bg-image is-small">
           <Collapsible trigger="Miscellaneous">
-          <section class="level">
-                <div class="columns">
-                  <h1 class="title"></h1>
+          <section className="level">
+                <div className="columns">
+                  <h1 className="title"></h1>
                   {vendors.map((vendor) => (
-                    <div class="column is-one-quarter">
+                    <div className="column is-one-quarter">
                       <VendorCard />
                     </div>
                   ))}
