@@ -8,8 +8,8 @@ export default function Events() {
   const { user } = useAuth0();
   return (
     <>
-      <section class="hero">
-        <div class="hero-body is-large">
+      <section className="hero">
+        <div className="hero-body is-large">
           <div className="container has-text-centered is-3 is-fullhd is-4-desktop is-12-tablet is-12-mobile has-text-black">
             <h1 class="title" id="user-font">
               Hi {user.name}! Welcome back!
