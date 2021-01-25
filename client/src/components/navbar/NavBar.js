@@ -26,25 +26,41 @@ const NavBar = () => {
                 <img src="../images/alyssa-hurley-rings.jpg" alt="logo_transparent">
                     </img>
             </figure> */}
-            <a className="navbar-item has-text-black" id="navbar-font" href="./home">
+            <a
+              className="navbar-item has-text-black"
+              id="navbar-font"
+              href="./home"
+            >
               Home
             </a>
             {/* hidden for future features */}
-            <a className="navbar-item has-text-black is-hidden" id="navbar-font" href="./budget">
+            <a
+              className="navbar-item has-text-black is-hidden"
+              id="navbar-font"
+              href="./budget"
+            >
               Budget
             </a>
             {/* hidden for future features */}
             <a
-              className="navbar-item has-text-black is-hidden" id="navbar-font" href="./calendar">
+              className="navbar-item has-text-black is-hidden"
+              id="navbar-font"
+              href="./calendar"
+            >
               Calendar
             </a>
             <Link
-              className="navbar-item has-text-black" id="navbar-font"
+              className="navbar-item has-text-black"
+              id="navbar-font"
               onClick={() => logout({ returnTo: window.location.origin })}
             >
               Log Out
             </Link>
-            <Link className="navbar-item has-text-black" id="navbar-font" to="/login">
+            <Link
+              className="navbar-item has-text-black"
+              id="navbar-font"
+              to="/login"
+            >
               Log in
             </Link>
             ​
