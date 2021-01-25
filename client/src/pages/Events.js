@@ -1,5 +1,4 @@
-import React, { Component, useState } from "react";
-import { ReactDOM } from "react-dom";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import EventForm from "../components/Forms/EventForm";
 
