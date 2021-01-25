@@ -1,5 +1,6 @@
-import React, { Component, Select } from "react";
-import { ReactDOM } from "react-dom";
+import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
+import API from "../../utils/API";
 
 class EventForm extends Component {
   constructor(props) {
@@ -31,7 +32,24 @@ class EventForm extends Component {
   //this will be the function that will put the info to the server
   onCreateEvent = (e) => {
     e.preventDefault();
-    console.log(e.target);
+    // console.log({
+    //   event_name: e.target.Name.value,
+    //   event_date: e.target.Date.value,
+    //   bride_groom1: e.target.SpouseOneName.value,
+    //   bride_groom2: e.target.SpouseTwoName.value,
+    //   budget: e.target.Budget.value,
+    //   estimated_guests: e.target.EstGuest.value,
+    // });
+    API.saveEvent({
+      event_name: e.target.Name.value,
+      event_date: e.target.Date.value,
+      bride_groom1: e.target.SpouseOneName.value,
+      bride_groom2: e.target.SpouseTwoName.value,
+      budget: e.target.Budget.value,
+      estimated_guests: e.target.EstGuest.value,
+    }).then();
+    // send info 2 server
+    // direct them to new page
   };
 
   render() {
