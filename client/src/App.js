@@ -16,7 +16,7 @@ import Vendors from "./pages/Vendors";
 
 
 function App() {
-  const { user, isAuthenticated, isLoading } = useAuth0();
+  const { isAuthenticated, isLoading } = useAuth0();
 
   if (isLoading) {
     return <div>Loading ...</div>;

@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import EventForm from "../components/Forms/EventForm";
 import API from "../utils/API";
 import "./Events.css";
 import { useHistory } from "react-router-dom";
@@ -9,6 +11,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 export default function Events() {
   const { user } = useAuth0();
   const [events, setEvents] = useState([]);
+  const [visible, setVisible] = useState(false);
   const history = useHistory();
 
   useEffect(() => {
@@ -73,6 +76,13 @@ export default function Events() {
           </div>
         </section>
       ))}
+      <div>
+        {visible ? (
+          <EventForm></EventForm>
+        ) : (
+          <Link onClick={() => setVisible(true)}>Create New Event +</Link>
+        )}
+      </div>
     </>
   );
 }

@@ -2,10 +2,14 @@ import React, { useState, useEffect } from "react";
 import VendorCard from "../components/VendorCard/VendorCard";
 import API from "../utils/API";
 import "react-bulma-components/dist/react-bulma-components.min.css";
+import Collapsible from "react-collapsible";
+import { Link } from "react-router-dom";
+import VendorForm from "../components/Forms/VendorForm";
 import "./Vendors.css";
 
 export default function Vendors(props) {
   const [vendors, setVendors] = useState([]);
+  const [visible, setVisible] = useState(false);
   const [filteredVendors, setFilteredVendors] = useState([]);
   const [category, setCategory] = useState("");
   const categories = [
@@ -54,6 +58,13 @@ export default function Vendors(props) {
                 <a onClick={() => setCategory(category)}>{category}</a>
               ))}
             </ul>
+            <div className="bg-img">
+              {visible ? (
+                <VendorForm></VendorForm>
+              ) : (
+                <Link onClick={() => setVisible(true)}>Create New Event +</Link>
+              )}
+            </div>
           </aside>
         </div>
 
