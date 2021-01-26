@@ -5,7 +5,7 @@ import "react-bulma-components/dist/react-bulma-components.min.css";
 import Collapsible from "react-collapsible";
 import { Link } from "react-router-dom";
 import VendorForm from "../components/Forms/VendorForm";
-import "./Vendors.css";
+import vendorsCss from "./Vendors.css";
 
 export default function Vendors(props) {
   const [vendors, setVendors] = useState([]);
@@ -50,7 +50,8 @@ export default function Vendors(props) {
 
   return (
     <>
-      <div className="columns is-multiline is-fullheight">
+    <div className="vendors">
+      <div className="columns is-multiline is-fullheight mt-6">
         <div className="column-gap is-1 position">
           <aside className="menu pt-6">
             <ul class="menu-list">
@@ -88,6 +89,7 @@ export default function Vendors(props) {
             ))}
           </div>
         </div>
+      </div>
       </div>
     </>
   );

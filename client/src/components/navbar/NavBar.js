@@ -11,7 +11,7 @@ const NavBar = () => {
       <div className="container">
         <div className="navbar-brand">
           <figure className="image is-32x32 pt-3">
-          <img src={user.picture} alt={user.name} />
+          <img className="is-rounded" src={user.picture} alt={user.name} />
           </figure>
           <p className="login-name py-3">{user.name}</p>
           <div
