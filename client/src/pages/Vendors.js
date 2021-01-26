@@ -69,7 +69,7 @@ export default function Vendors(props) {
           </aside>
         </div>
 
-        <div className="container">
+        <div className="container pt-6">
           <div className="columns is-multiline">
             {filteredVendors.map((vendor) => (
               <div className="column is-5">
