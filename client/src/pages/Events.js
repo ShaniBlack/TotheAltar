@@ -5,6 +5,7 @@ import API from "../utils/API";
 import "./Events.css";
 import { useHistory } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
+import Moment from "react-moment"
 
 export default function Events() {
   const { user } = useAuth0();
@@ -31,7 +32,8 @@ export default function Events() {
 
   return (
     <>
-      <section className="hero">
+    <div className="events">
+      <section className="hero mt-6">
         <div className="hero-body is-large">
           <div className="container has-text-centered is-3 is-fullhd is-4-desktop is-12-tablet is-12-mobile has-text-black">
             <h1 class="title" id="user-font">
@@ -57,19 +59,28 @@ export default function Events() {
                   className="columns is-centered has-text-weight-bold"
                   id="event-font"
                 >
-                  {event.event_date}
+                  <Moment format="dddd, MMMM do, YYYY">
+                    {event.event_date}
+                  </Moment>
                 </h1>
+                <h1 
+                className="columns is-centered has-text-weight-bold"
+                id="event-font"
+              >
+                <Moment format="h:mm a">{event.event_date}</Moment>
+              </h1>
               </div>
             </div>
-          </div>
-        </section>
-      ))}
-      <div>
+      <div className="create-event">
         {visible ? (
           <EventForm></EventForm>
         ) : (
           <Link onClick={() => setVisible(true)}>Create New Event +</Link>
         )}
+      </div>
+          </div>
+        </section>
+      ))}
       </div>
     </>
   );
