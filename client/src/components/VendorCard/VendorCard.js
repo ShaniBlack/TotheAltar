@@ -1,9 +1,10 @@
-import React from "react";
-// import Vendors from "./pages/Vendors.js"
-//import images from "../../images"
+import React, { useState } from "react";
+import Modal from "../modal/Modal";
+import VendorForm from "../../components/Forms/VendorForm";
+import { Link } from "react-router-dom";
 
 export default function VendorCard(props) {
-  
+  const [visible, setVisible] = useState(false);
   return (
     <div className="card">
       <div className="card-image">
@@ -32,12 +33,31 @@ export default function VendorCard(props) {
 
         <div className="media-content">
           <p className="subtitle is-6">Phone Number: {props.phone}</p>
-          <p className="subtitle is-6">Projected Cost: {props.projected_cost}</p>
+          <p className="subtitle is-6">
+            Projected Cost: {props.projected_cost}
+          </p>
           <p className="subtitle is-6">Acutal Cost: {props.actual_cost}</p>
           <p className="subtitle is-6">Notes: {props.notes}</p>
-          <a link="../images/contract.pdf" download>View Contract    </a>
-          <button className="button is-small has-background-danger-light" id="delete-btn" onClick={() => props.deleteCard(props.id)}>Delete</button>
-          <button className="button is-small has-background-info-light" id="update-btn">Update</button>
+          <a link="../images/contract.pdf" download>
+            View Contract{" "}
+          </a>
+          <button
+            className="button is-small has-background-danger-light"
+            id="delete-btn"
+            onClick={() => props.deleteCard(props.id)}
+          >
+            Delete
+          </button>
+          {/* <div class="content has-text-centered"> */}
+            <button className="button is-small has-background-danger-light"
+            id="edit-btn">
+              {visible ? (
+                <VendorForm class="box"></VendorForm>
+              ) : (
+                <Link onClick={() => setVisible(true)}>Edit Vendor</Link>
+              )}
+            </button>
+          {/* </div> */}
         </div>
       </div>
     </div>

@@ -2,16 +2,21 @@ import React, { useState, useEffect } from "react";
 import VendorCard from "../components/VendorCard/VendorCard";
 import API from "../utils/API";
 import "react-bulma-components/dist/react-bulma-components.min.css";
-import Collapsible from "react-collapsible";
-import { Link } from "react-router-dom";
-import VendorForm from "../components/Forms/VendorForm";
 import "./Vendors.css";
+import VendorForm from "../components/Forms/VendorForm";
+import { Link } from "react-router-dom";
+
+
+// import Collapsible from "react-collapsible";
 
 export default function Vendors(props) {
   const [vendors, setVendors] = useState([]);
-  const [visible, setVisible] = useState(false);
+  const [editVendor, setEditVendor] = useState([]);
   const [filteredVendors, setFilteredVendors] = useState([]);
   const [category, setCategory] = useState("");
+  const [visible, setVisible] = useState(false);
+  //const history = useHistory();
+
   const categories = [
     "Bakery",
     "Catering",
@@ -42,6 +47,14 @@ export default function Vendors(props) {
       .catch((err) => console.log(err));
   }
 
+  function loadVendor(id) {
+    API.getVendor(id)
+      .then((res) => {
+        setEditVendor(res.data);
+      })
+      .catch((err) => console.log(err));
+  }
+
   function deleteCard(id) {
     API.deleteVendor(id)
       .then((res) => loadVendors())
@@ -49,22 +62,26 @@ export default function Vendors(props) {
   }
 
   return (
-    <>
+    <div className="vendor-container">
       <div className="columns is-multiline is-fullheight">
         <div className="column-gap is-1 position">
           <aside className="menu">
-            <ul class="menu-list">
+            <ul className="menu-list">
               {categories.map((category) => (
                 <a onClick={() => setCategory(category)}>{category}</a>
               ))}
             </ul>
-            <div className="bg-img">
-              {visible ? (
-                <VendorForm></VendorForm>
-              ) : (
-                <Link onClick={() => setVisible(true)}>Create New Event +</Link>
-              )}
-            </div>
+                <div class="content has-text-centered">
+                  <div>
+                    {visible ? (
+                      <VendorForm></VendorForm>
+                    ) : (
+                      <Link onClick={() => setVisible(true)}>
+                        Create New Vendor +
+                      </Link>
+                    )}
+                  </div>
+                </div>
           </aside>
         </div>
 
@@ -75,6 +92,7 @@ export default function Vendors(props) {
                 <VendorCard
                   className="box"
                   deleteCard={deleteCard}
+                  editCard={loadVendor}
                   id={vendor.id}
                   key={vendor.id}
                   vendor={vendor.vendor_name}
@@ -83,12 +101,13 @@ export default function Vendors(props) {
                   projected_cost={vendor.projected_cost}
                   actual_cost={vendor.actual_cost}
                   notes={vendor.notes}
+                
                 />
               </div>
             ))}
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "react-bulma-components/dist/react-bulma-components.min.css";
 import API from "../../utils/API";
 
-function VendorForm() {
+function VendorFormRob() {
   const [formObject, setFormObject] = useState({
     vendor_name: "",
     category: "",
@@ -45,9 +45,9 @@ function VendorForm() {
   }
 
   return (
-    // <div class="modal">
-    //   <div class="modal-background"></div>
-    //   <div class="modal-card"></div>
+    <div class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card"></div>
       <form>
         <label>
           Vendor Name:
@@ -101,7 +101,7 @@ function VendorForm() {
               formObject.projectedCost
             )
           }
-          // onClick={handleFormSubmit}
+           onClick={handleFormSubmit}
         />
       </form>
     //   <footer class="modal-card-foot">
@@ -113,4 +113,4 @@ function VendorForm() {
 
    );
 }
-export default VendorForm;
+export default VendorFormRob;

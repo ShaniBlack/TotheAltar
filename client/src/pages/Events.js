@@ -13,6 +13,7 @@ export default function Events() {
   const [events, setEvents] = useState([]);
   const [visible, setVisible] = useState(false);
   const history = useHistory();
+  const [dbuser, setDbUsers] = useState([]);
 
   useEffect(() => {
     loadEvents();
@@ -24,6 +25,14 @@ export default function Events() {
       .catch((err) => console.log(err));
   }
 
+  function loadUser() {
+    API.getUser()
+      .then((res) => {
+        setDbUsers(res.data);
+      })
+      .catch((err) => console.log(err));
+  }
+
   const heroClick = (id) => {
     history.push("/vendors");
   };
@@ -32,7 +41,7 @@ export default function Events() {
   // .catch((err) => console.log(err));
 
   return (
-    <>
+    <div class="event-container">
       <section className="hero">
         <div className="hero-body is-large">
           <div className="container has-text-centered is-3 is-fullhd is-4-desktop is-12-tablet is-12-mobile has-text-black">
@@ -67,22 +76,24 @@ export default function Events() {
                   className="columns is-centered has-text-weight-bold"
                   id="event-font"
                 >
-                  <Moment format="h:mm a">
-                   {event.event_date}
-                  </Moment>
+                  <Moment format="h:mm a">{event.event_date}</Moment>
                 </h1>
               </div>
             </div>
           </div>
         </section>
       ))}
-      <div>
-        {visible ? (
-          <EventForm></EventForm>
-        ) : (
-          <Link onClick={() => setVisible(true)}>Create New Event +</Link>
-        )}
-      </div>
-    </>
+      <footer class="footer is-fixed-bottom">
+        <div class="content has-text-centered">
+          <div>
+            {visible ? (
+              <EventForm></EventForm>
+            ) : (
+              <Link onClick={() => setVisible(true)}>Create New Event +</Link>
+            )}
+          </div>
+        </div>
+      </footer>
+    </div>
   );
 }
