@@ -32,7 +32,7 @@ export default function Events() {
   return (
     <>
     <div className="events">
-      <section className="hero">
+      <section className="hero mt-6">
         <div className="hero-body is-large">
           <div className="container has-text-centered is-3 is-fullhd is-4-desktop is-12-tablet is-12-mobile has-text-black">
             <h1 class="title" id="user-font">
