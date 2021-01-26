@@ -61,15 +61,15 @@ export default function Events() {
                   {event.event_date}
                 </h1>
               </div>
-            </div>
-          </div>
-      <div>
+      <div className="create-event">
         {visible ? (
           <EventForm></EventForm>
         ) : (
           <Link onClick={() => setVisible(true)}>Create New Event +</Link>
         )}
       </div>
+            </div>
+          </div>
         </section>
       ))}
       </div>
