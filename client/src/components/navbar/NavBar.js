@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
   const { user, logout } = useAuth0();
   return (
-    <nav className="navbar" role="navigation" aria-label="main navigation">
+    <nav className="navbar is-fixed-top" role="navigation" aria-label="main navigation">
       <div className="container">
         <div className="navbar-brand">
           <figure className="image is-32x32 pt-3">
