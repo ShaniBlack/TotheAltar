@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
 
-.event-container {
+.events {
     background: url("https://images.unsplash.com/photo-1556918108-baaafd6a2010?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8d2VkZGluZ3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8cGxhbmV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -8,44 +8,22 @@
     background-size: cover;
     background-color: rgba(255, 255, 255, 0.6);
     background-blend-mode: lighten;
+    height: 100vh;
 
 }
 
 #hero-font,
 .wrapper {
     font-family: 'Parisienne', cursive;
-    font-size: 100;
-    font-weight: bold;
-    
-};
-
-
-.title {
-    font-family: 'Parisienne', cursive;
-    font-size: 100;
-    font-weight: bold;
-    
-};
-
-/* Events page Background styles */
-.containersd {
-    background-image: url("https://images.unsplash.com/photo-1556918108-baaafd6a2010?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8d2VkZGluZ3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8cGxhbmV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    /* background-color: rgba(255, 255, 255, 0.6); */
-    background-blend-mode: lighten;
-} 
-    
-#event-font {
-    font-size: 100
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
-
-#footer {
-    font-family: 'Parisienne', cursive;
     font-size: 25px;
     font-weight: bold;
-}
+    
+};
+
+
+#user-font {
+    font-family: 'Parisienne', cursive;
+    font-size: 15px;
+    font-weight: bold;
+    
+};

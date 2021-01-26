@@ -1,26 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
 
-
-
-.vendor-container {
-    background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.theguardian.com%2Fus-news%2F2019%2Foct%2F29%2Fwildfire-wedding-photo-couple-masks&psig=AOvVaw2KuN-iZBqNq_2zBOL2N-OO&ust=1611765261076000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMjp59CDuu4CFQAAAAAdAAAAABAD") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+.vendors {
+    background-image: url("https://images.unsplash.com/photo-1554354799-5986245f7e46?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDV8fHdlZGRpbmclMjBjYWtlfGVufDB8fDB8&auto=format&fit=crop&w=900&q=60");
     background-size: cover;
+    background-position: center center;
+    /* background-repeat: no-repeat; */
+    background-attachment: fixed;
     background-color: rgba(255, 255, 255, 0.6);
-    background-blend-mode: lighten;
-
-}
+  background-blend-mode: lighten;
+  height: 200vh;
+  }
 
 .position {
     position: fixed;
 }
 
-ul {
+.menu {
     font-family: 'Parisienne', cursive;
     font-weight: bold;
     font-size: 20px;
+    margin-left: 20px;
 }
 
 .title {

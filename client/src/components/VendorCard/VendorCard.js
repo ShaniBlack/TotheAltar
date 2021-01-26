@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Modal from "../modal/Modal";
 import VendorForm from "../../components/Forms/VendorForm";
 import { Link } from "react-router-dom";
+import React from "react";
+// import "../../../src/images";
 
 export default function VendorCard(props) {
   const [visible, setVisible] = useState(false);
@@ -10,7 +12,7 @@ export default function VendorCard(props) {
       <div className="card-image">
         <figure className="image is-4by3">
           <img
-            src="https://bulma.io/images/placeholders/1280x960.png"
+            src="https://images.unsplash.com/photo-1525441273400-056e9c7517b3?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8d2VkZGluZyUyMHRhYmxlfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"
             alt="Placeholder image"
           />
         </figure>
@@ -18,9 +20,9 @@ export default function VendorCard(props) {
       <div className="card-content">
         <div className="media">
           <div className="media-left">
-            <figure className="image is-48x48">
+            <figure className="image is-64x64">
               <img
-                src="https://bulma.io/images/placeholders/96x96.png"
+                src="https://images.unsplash.com/photo-1573059224875-f1404306b3e2?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzZ8fGNoYW1wYWduZSUyMGdsYXNzfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"
                 alt="Placeholder image"
               />
             </figure>

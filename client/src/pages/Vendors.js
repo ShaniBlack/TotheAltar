@@ -7,7 +7,6 @@ import VendorForm from "../components/Forms/VendorForm";
 import { Link } from "react-router-dom";
 
 
-// import Collapsible from "react-collapsible";
 
 export default function Vendors(props) {
   const [vendors, setVendors] = useState([]);
@@ -85,7 +84,7 @@ export default function Vendors(props) {
           </aside>
         </div>
 
-        <div className="container">
+        <div className="container pt-6">
           <div className="columns is-multiline">
             {filteredVendors.map((vendor) => (
               <div className="column is-5">
