@@ -8,8 +8,8 @@ export default function Login(props) {
 
   return (
     <div className="login-wrapper">
-      <h1>Please Log In</h1>
-      <button onClick={loginWithRedirect}>Log In Auth0</button>
+      <h1 className="login-font">To the Altar</h1>
+      <button className="btn-font" onClick={loginWithRedirect}>Login</button>
     </div>
   );
 }

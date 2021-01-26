@@ -52,7 +52,7 @@ export default function Vendors(props) {
     <>
       <div className="columns is-multiline is-fullheight">
         <div className="column-gap is-1 position">
-          <aside className="menu">
+          <aside className="menu pt-6">
             <ul class="menu-list">
               {categories.map((category) => (
                 <a onClick={() => setCategory(category)}>{category}</a>

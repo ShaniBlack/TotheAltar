@@ -22,9 +22,10 @@
     position: fixed;
 }
 
-ul {
+.menu {
     font-family: 'Parisienne', cursive;
     font-weight: bold;
     font-size: 20px;
+    margin-left: 20px;
 }
 
