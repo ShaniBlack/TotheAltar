@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
 
-/* .Collapsible {
-    font-family: 'Parisienne', cursive;
-    font-weight: bold;
-    text-align: center;
-    font-size: 50px;
-   } */
-
 .bg-img {
     background-image: url("https://images.unsplash.com/photo-1554354799-5986245f7e46?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDV8fHdlZGRpbmclMjBjYWtlfGVufDB8fDB8&auto=format&fit=crop&w=900&q=60") no-repeat center center fixed;
     -webkit-background-size: fill;

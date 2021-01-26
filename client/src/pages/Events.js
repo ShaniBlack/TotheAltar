@@ -62,8 +62,6 @@ export default function Events() {
               </div>
             </div>
           </div>
-        </section>
-      ))}
       <div>
         {visible ? (
           <EventForm></EventForm>
@@ -71,6 +69,8 @@ export default function Events() {
           <Link onClick={() => setVisible(true)}>Create New Event +</Link>
         )}
       </div>
+        </section>
+      ))}
     </>
   );
 }
