@@ -1,5 +1,6 @@
 import React from "react";
 // import Vendors from "./pages/Vendors.js"
+//import images from "../../images"
 
 export default function VendorCard(props) {
   
@@ -34,7 +35,7 @@ export default function VendorCard(props) {
           <p className="subtitle is-6">Projected Cost: {props.projected_cost}</p>
           <p className="subtitle is-6">Acutal Cost: {props.actual_cost}</p>
           <p className="subtitle is-6">Notes: {props.notes}</p>
-          <a href="../" target="_blank">View Contract  </a>
+          <a link="../images/contract.pdf" download>View Contract    </a>
           <button className="button is-small has-background-danger-light" id="delete-btn" onClick={() => props.deleteCard(props.id)}>Delete</button>
           <button className="button is-small has-background-info-light" id="update-btn">Update</button>
         </div>
