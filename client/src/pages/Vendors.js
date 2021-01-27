@@ -14,8 +14,6 @@ export default function Vendors() {
   const [category, setCategory] = useState("");
   const [editVendor, setEditVendor] = useState([]);
 
-  
-  
   const categories = [
     "Bakery",
     "Catering",
@@ -32,7 +30,7 @@ export default function Vendors() {
   let location = useLocation();
 
   useEffect(() => {
-    console.log(location.state.id)
+    console.log(location.state.id);
     loadVendors();
   }, []);
 
@@ -52,7 +50,7 @@ export default function Vendors() {
       .catch((err) => console.log(err));
   }
 
-    function loadVendor(id) {
+  function loadVendor(id) {
     API.getVendor(id)
       .then((res) => {
         setEditVendor(res.data);
@@ -68,12 +66,34 @@ export default function Vendors() {
   return (
     <>
       <div className="vendors">
-      <section className="hero mt-6">
+        <section className="hero mt-6">
           <div className="hero-body is-large">
             <div className="container welcome-banner has-text-centered is-3 is-fullhd is-4-desktop is-12-tablet is-12-mobile">
-              <h1 class="title" id="user-font">
-                View all your event's vendors here 
+              <h1 className="title" id="user-font">
+                View all your event's vendors here
               </h1>
+              <div class="dropdown is-active">
+                <div class="dropdown-trigger">
+                  <button
+                    class="button is-rounded"
+                    aria-haspopup="true"
+                    aria-controls="dropdown-menu"
+                  >
+                    <span>Dropdown button</span>
+                    <span class="icon is-small">
+                      <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                  </button>
+                <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                  <div class="dropdown-content">
+                    {/* how to map through and keep menu items in Dropdown */}
+                    {categories.map((category) => (
+                      <a onClick={() => setCategory(category)}>{category}</a>
+                      ))}
+                      </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -85,6 +105,7 @@ export default function Vendors() {
                   <a onClick={() => setCategory(category)}>{category}</a>
                 ))}
               </ul>
+
               <div className="bg-img">
                 {visible ? (
                   <VendorForm></VendorForm>
