@@ -1,23 +1,10 @@
-import React, { Component, useState } from "react";
-import { useHistory } from "react-router-dom";
+import React from "react";
+// import { useHistory } from "react-router-dom";
 import API from "../../utils/API";
 import { useLocation } from "react-router-dom";
 
 function VendorForm() {
-  const history = useHistory();
-
-  const [Vendors, setVendors] = useState({
-    Name: "",
-    Category: "",
-    ContactName: "",
-    PhoneNumber: "",
-    Email: "",
-    Address: "",
-    ProjectedCost: "",
-    ActualCost: "",
-    Contract: "",
-    Notes: "",
-  });
+  // const history = useHistory();
 
   let location = useLocation();
 
