@@ -31,7 +31,7 @@ export default function Vendors() {
   let location = useLocation();
 
   useEffect(() => {
-    //console.log(location.state.id);
+    console.log(location.state.id);
     loadVendors();
   }, []);
 
@@ -76,12 +76,22 @@ export default function Vendors() {
                   <a onClick={() => setCategory(category)}>{category}</a>
                 ))}
               </ul>
-              {/* <VendorForm/> */}
               <div className="bg-img">
                 {visible ? (
-                  <VendorForm
-                  setFilteredVendors={setFilteredVendors} 
-                  />
+                  <VendorCardModal />
+                ) : (
+                  <Link
+                    class="has-text-weight-bold"
+                    onClick={() => setVisible(true)}
+                  >
+                    Create New Vendor Modal
+                  </Link>
+                )}
+              </div>
+              
+              <div className="bg-img">
+                {visible ? (
+                  <VendorForm />
                 ) : (
                   <Link
                     class="has-text-weight-bold"
