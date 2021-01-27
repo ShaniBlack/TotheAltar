@@ -32,7 +32,7 @@ const NavBar = () => {
           </figure>
           <p className="login-name pl-3 pt-3">{user.name}</p>
           <div
-            className="button navbar-burger burger"
+            className="button navbar-burger burger mr-2"
             data-target="navbar-menu"
             aria-expanded="false"
             onClick={toggleBurger}
@@ -79,13 +79,6 @@ const NavBar = () => {
               >
                 Log Out
               </Link>
-              <Link
-                className="navbar-item has-text-black"
-                id="navbar-font"
-                to="/login"
-              >
-                Log in
-              </Link> 
                </div>
           </div>
         </div>

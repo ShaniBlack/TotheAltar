@@ -72,25 +72,24 @@ export default function Vendors() {
               <h1 className="title" id="user-font">
                 View all your event's vendors here
               </h1>
-              <div class="dropdown is-hidden-tablet">
-                <div class="dropdown-trigger">
+              <div className="dropdown is-hidden-tablet">
+                <div className="dropdown-trigger">
                   <button
-                    class="button is-rounded"
+                    className="button is-rounded"
                     aria-haspopup="true"
                     aria-controls="dropdown-menu"
                   >
-                    <span>Dropdown button</span>
-                    <span class="icon is-small">
-                      <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    <span>Categories</span>
+                    <span className="icon is-small">
+                      <i className="fas fa-angle-down" aria-hidden="true"></i>
                     </span>
                   </button>
-                <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                  <div class="dropdown-content">
-                    {/* how to map through and keep menu items in Dropdown */}
-                    {categories.map((category) => (
-                      <a onClick={() => setCategory(category)}>{category}</a>
+                  <div className="dropdown-menu" id="dropdown-menu" role="menu">
+                    <div className="dropdown-content">
+                      {categories.map((category) => (
+                        <a className="dropdown-item" onClick={() => setCategory(category)}>{category}</a>
                       ))}
-                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
