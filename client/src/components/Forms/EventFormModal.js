@@ -8,17 +8,6 @@ import EventForm from "./EventForm";
 export default function VendorCaroModal(props) {
   const [isModal, setIsModal] = useState(true);
   const active = isModal ? "is-active" : "";
-  // const Modal = ({ closeModal, setIsModal }) => {
-  //   if (!setIsModal) {
-  //     return null;
-  //   }
-  // };
-
-  // Modal.propTypes = {
-  //   closeModal: React.PropTypes.func.isRequired,
-  //   modalState: React.PropTypes.bool.isRequired,
-  //   title: React.PropTypes.string,
-  // };
 
   const handleClick = () => {
     setIsModal({ isModal: isModal });

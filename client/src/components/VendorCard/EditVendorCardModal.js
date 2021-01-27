@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import "bulma/css/bulma.css";
 import "./VendorCardModal";
 import ScriptTag from "react-script-tag";
+import Modal from 'react-bootstrap-modal';
 
 export default function EditVendorCaroModal(props) {
   const [isModal, setIsModal] = useState(true);
