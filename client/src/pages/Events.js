@@ -7,7 +7,7 @@ import { useHistory } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import Moment from "react-moment";
 
-export default function Events() {
+export default function Events(props) {
   const { user } = useAuth0();
   const [events, setEvents] = useState([]);
   const [visible, setVisible] = useState(false);
@@ -48,6 +48,7 @@ export default function Events() {
   }
 
   const heroClick = (id) => {
+    props.setCurrentEventId(id);
     history.push("/vendors", { id });
   };
 

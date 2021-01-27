@@ -38,13 +38,13 @@ function EventForm() {
         </p>
         <p>
           <label>
-            Event SpouseOneName:
+            Event Spouse One Name:
             <input type="text" name="SpouseOneName"></input>
           </label>
         </p>
         <p>
           <label>
-            Event SpouseTwoName:
+            Event Spouse Two Name:
             <input type="text" name="SpouseTwoName"></input>
           </label>
         </p>

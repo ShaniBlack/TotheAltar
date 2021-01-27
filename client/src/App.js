@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,6 +14,8 @@ import Vendors from "./pages/Vendors";
 
 function App() {
   const { isAuthenticated, isLoading } = useAuth0();
+
+  const [currentEventId, setCurrentEventId] = useState(0);
 
   if (isLoading) {
     return <div>Loading ...</div>;
@@ -35,10 +37,10 @@ function App() {
             <Dashboard />
           </Route>
           <Route exact path="/vendors">
-            <Vendors />
+            <Vendors currentEventId={currentEventId} />
           </Route>
           <Route exact path="/">
-            <Events />
+            <Events setCurrentEventId={setCurrentEventId} />
           </Route>
           <Route path="*">
             <Redirect to="/" />

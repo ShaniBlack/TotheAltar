@@ -7,11 +7,12 @@ import VendorForm from "../components/Forms/VendorForm";
 import "./Vendors.css";
 import { useLocation } from "react-router-dom";
 
-export default function Vendors() {
+export default function Vendors(props) {
   const [vendors, setVendors] = useState([]);
   const [visible, setVisible] = useState(false);
   const [filteredVendors, setFilteredVendors] = useState([]);
   const [category, setCategory] = useState("");
+
   const categories = [
     "Bakery",
     "Catering",
@@ -35,7 +36,8 @@ export default function Vendors() {
     setFilteredVendors(
       vendors.filter(
         (vendor) =>
-          vendor.category === category && vendor.event_id === location.state.id
+          vendor.category === category &&
+          vendor.event_id === props.currentEventId
       )
     );
   }, [category, vendors, location.state]);
@@ -67,7 +69,10 @@ export default function Vendors() {
               </ul>
               <div className="bg-img">
                 {visible ? (
-                  <VendorForm></VendorForm>
+                  <VendorForm
+                    currentEventId={props.currentEventId}
+                    loadVendors={loadVendors}
+                  ></VendorForm>
                 ) : (
                   <Link onClick={() => setVisible(true)}>
                     Create New Vendor +
