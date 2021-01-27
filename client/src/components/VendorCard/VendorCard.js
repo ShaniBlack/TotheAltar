@@ -2,6 +2,7 @@ import React, { useState } from "react";
 // import Modal from "../modal/Modal";
 import VendorForm from "../../components/Forms/VendorForm";
 import { Link } from "react-router-dom";
+import "./vendorcard.css"
 
 
 
@@ -29,7 +30,7 @@ export default function VendorCard(props) {
             </figure>
           </div>
           <div className="media-content">
-            <p className="title is-4">{props.vendor}</p>
+            <p className="title">{props.vendor}</p>
             <p className="subtitle">Contact: {props.contact}</p>
           </div>
         </div>
@@ -40,12 +41,12 @@ export default function VendorCard(props) {
           <p className="subtitle">Acutal Cost: {props.actual_cost}</p>
           <p className="subtitle">Notes: {props.notes}</p>
           <a href="../" target="_blank">View Contract  </a>
-          <button className="button is-small has-background-danger-light" id="delete-btn" onClick={() => props.deleteCard(props.id)}>Delete</button>
-          <button className="button is-small has-background-info-light" id="update-btn">
+          <button className="button is-rounded is-small has-background-danger-light" id="delete-btn" onClick={() => props.deleteCard(props.id)}>Delete</button>
+          <button className="button is-rounded is-small has-background-info-light" id="update-btn">
               {visible ? (
                 <VendorForm class="box"></VendorForm>
               ) : (
-                <Link onClick={() => setVisible(true)}>Edit Vendor</Link>
+                <Link id="update-btn" onClick={() => setVisible(true)}>Edit Vendor</Link>
               )}
             </button>
 
