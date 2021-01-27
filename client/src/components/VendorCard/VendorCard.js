@@ -4,11 +4,9 @@ import VendorForm from "../../components/Forms/VendorForm";
 import { Link } from "react-router-dom";
 import EditVendorCaroModal from "./EditVendorCardModal";
 
-
-
 export default function VendorCard(props) {
   const [visible, setVisible] = useState(false);
-  
+
   return (
     <div className="card">
       <div className="card-image">
@@ -31,7 +29,7 @@ export default function VendorCard(props) {
           </div>
           <div className="media-content">
             <p className="title is-4">{props.vendor}</p>
-            <p className="subtitle is-6">Contact: {props.contact}</p>
+            <p className="subtitle">Contact: {props.contact}</p>
           </div>
         </div>
 
@@ -52,17 +50,18 @@ export default function VendorCard(props) {
           >
             Delete
           </button>
-          
+
           {/* <div class="content has-text-centered"> */}
-            <button className="button is-small has-background-danger-light"
-            id="edit-btn">
-              {visible ? (
-                <EditVendorCaroModal class="box"></EditVendorCaroModal>
-              ) : (
-                <Link onClick={() => setVisible(true)}>Edit Vendor</Link>
-              )}
-            </button>
-          {/* </div> */}
+          <button
+            className="button is-small has-background-danger-light"
+            id="edit-btn"
+          >
+            {visible ? (
+              <EditVendorCaroModal class="box"></EditVendorCaroModal>
+            ) : (
+              <Link onClick={() => setVisible(true)}>Edit Vendor</Link>
+            )}
+          </button>
         </div>
       </div>
     </div>
