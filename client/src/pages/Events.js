@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import EventForm from "../components/Forms/EventForm";
+import EventFormModal from "../components/Forms/EventFormModal";
 import API from "../utils/API";
 import "./Events.css";
 import { useHistory } from "react-router-dom";
@@ -97,7 +97,7 @@ export default function Events() {
         <section>
           <div className="create-event box">
             {visible ? (
-              <EventForm />
+              <EventFormModal />
             ) : (
               <Link onClick={() => setVisible(true)}>Create New Event +</Link>
             )}

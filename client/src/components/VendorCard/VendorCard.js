@@ -2,6 +2,7 @@ import React, { useState } from "react";
 // import Modal from "../modal/Modal";
 import VendorForm from "../../components/Forms/VendorForm";
 import { Link } from "react-router-dom";
+import EditVendorCaroModal from "./EditVendorCardModal";
 
 
 
@@ -56,7 +57,7 @@ export default function VendorCard(props) {
             <button className="button is-small has-background-danger-light"
             id="edit-btn">
               {visible ? (
-                <VendorForm class="box"></VendorForm>
+                <EditVendorCaroModal class="box"></EditVendorCaroModal>
               ) : (
                 <Link onClick={() => setVisible(true)}>Edit Vendor</Link>
               )}

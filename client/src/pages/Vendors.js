@@ -3,7 +3,7 @@ import VendorCard from "../components/VendorCard/VendorCard";
 import API from "../utils/API";
 import "react-bulma-components/dist/react-bulma-components.min.css";
 import { Link } from "react-router-dom";
-import VendorForm from "../components/Forms/VendorForm";
+//import VendorForm from "../components/Forms/VendorForm";
 import VendorCardModal from "../components/VendorCard/VendorCardModal";
 import "./Vendors.css";
 import { useLocation } from "react-router-dom";
@@ -79,19 +79,6 @@ export default function Vendors() {
               <div className="bg-img">
                 {visible ? (
                   <VendorCardModal />
-                ) : (
-                  <Link
-                    class="has-text-weight-bold"
-                    onClick={() => setVisible(true)}
-                  >
-                    Create New Vendor Modal
-                  </Link>
-                )}
-              </div>
-              
-              <div className="bg-img">
-                {visible ? (
-                  <VendorForm />
                 ) : (
                   <Link
                     class="has-text-weight-bold"
