@@ -26,7 +26,9 @@
     "cors": "^2.8.5",
     "express": "^4.16.3",
     "if-env": "^1.0.4",
+    "moment": "^2.29.1",
     "mysql2": "^2.2.5",
+    "react-moment": "^1.1.1",
     "semantic-ui-react": "^2.0.3",
     "sequelize": "^6.4.0"
   }

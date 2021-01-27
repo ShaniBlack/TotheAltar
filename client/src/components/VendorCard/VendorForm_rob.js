@@ -15,7 +15,6 @@ function VendorFormRob() {
     contract: "",
   });
 
-
   function handleInputChange(event) {
     const { name, value } = event.target;
     setFormObject({ ...formObject, [name]: value });
