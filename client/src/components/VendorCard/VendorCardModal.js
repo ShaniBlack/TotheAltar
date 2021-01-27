@@ -8,13 +8,22 @@ import VendorForm from "../Forms/VendorForm";
 export default function VendorCaroModal(props) {
   const [isModal, setIsModal] = useState(true);
   const active = isModal ? "is-active" : "";
-  const close = isModal ? "is-active" : false;
-  // const active = isModal ? "is-active" : "";
-  
+  // const Modal = ({ closeModal, setIsModal }) => {
+  //   if (!setIsModal) {
+  //     return null;
+  //   }
+  // };
+
+  // Modal.propTypes = {
+  //   closeModal: React.PropTypes.func.isRequired,
+  //   modalState: React.PropTypes.bool.isRequired,
+  //   title: React.PropTypes.string,
+  // };
+
   const handleClick = () => {
     setIsModal({ isModal: isModal });
   };
-  
+
   return (
     <div>
       {/* <button
@@ -30,11 +39,13 @@ export default function VendorCaroModal(props) {
             <button
               onClick={handleClick}
               className="delete"
+              //onClick={Modal.propTypes.closeModal}
               aria-label="close"
             />
           </header>
           <section className="modal-card-body">
             <VendorForm />
+            <a className="button">Cancel</a>
           </section>
         </div>
       </div>
