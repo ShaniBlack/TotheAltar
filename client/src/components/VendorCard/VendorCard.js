@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-// import Modal from "../modal/Modal";
-import VendorForm from "../../components/Forms/VendorForm";
 import { Link } from "react-router-dom";
-import "./vendorcard.css"
-
+import "./vendorcard.css";
 
 import EditVendorCaroModal from "./EditVendorCardModal";
 
@@ -41,8 +38,16 @@ export default function VendorCard(props) {
           <p className="subtitle">Projected Cost: {props.projected_cost}</p>
           <p className="subtitle">Acutal Cost: {props.actual_cost}</p>
           <p className="subtitle">Notes: {props.notes}</p>
-          <a className="view-link" href="../" target="_blank">View Contract  </a>
-          <button className="button is-rounded is-small has-background-danger-light" id="delete-btn" onClick={() => props.deleteCard(props.id)}>Delete</button>
+          <a className="view-link" href="../" target="_blank">
+            View Contract{" "}
+          </a>
+          <button
+            className="button is-rounded is-small has-background-danger-light"
+            id="delete-btn"
+            onClick={() => props.deleteCard(props.id)}
+          >
+            Delete
+          </button>
           <button
             className="button is-rounded is-small has-background-info-light"
             id="update-btn"
@@ -50,7 +55,9 @@ export default function VendorCard(props) {
             {visible ? (
               <EditVendorCaroModal class="box"></EditVendorCaroModal>
             ) : (
-              <Link id="update-btn" onClick={() => setVisible(true)}>Edit Vendor</Link>
+              <Link id="update-btn" onClick={() => setVisible(true)}>
+                Edit Vendor
+              </Link>
             )}
           </button>
         </div>

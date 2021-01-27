@@ -27,37 +27,61 @@ function EventForm() {
         <p>
           <label>
             Event Name:
-            <input className="field is-pulled-right is-9" type="text" name="Name"></input>
+            <input
+              className="field is-pulled-right is-9"
+              type="text"
+              name="Name"
+            ></input>
           </label>
         </p>
         <p>
           <label>
             Event Date:
-            <input className="field is-pulled-right"  type="text" name="Date"></input>
+            <input
+              className="field is-pulled-right"
+              type="text"
+              name="Date"
+            ></input>
           </label>
         </p>
         <p>
           <label>
             Event SpouseOneName:
-            <input className="field is-pulled-right" type="text" name="SpouseOneName"></input>
+            <input
+              className="field is-pulled-right"
+              type="text"
+              name="SpouseOneName"
+            ></input>
           </label>
         </p>
         <p>
           <label>
             Event SpouseTwoName:
-            <input className="field is-pulled-right" type="text" name="SpouseTwoName"></input>
+            <input
+              className="field is-pulled-right"
+              type="text"
+              name="SpouseTwoName"
+            ></input>
           </label>
         </p>
         <p>
           <label>
             Event Budget:
-            <input className="field is-pulled-right" type="text" name="Budget"></input>
+            <input
+              className="field is-pulled-right"
+              type="text"
+              name="Budget"
+            ></input>
           </label>
         </p>
         <p>
           <label>
             Event EstGuest:
-            <input className="field is-pulled-right" type="text" name="EstGuest"></input>
+            <input
+              className="field is-pulled-right"
+              type="text"
+              name="EstGuest"
+            ></input>
           </label>
         </p>
         <button className="button is-rounded is-medium">Submit</button>

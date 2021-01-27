@@ -3,8 +3,6 @@ import "react-bulma-components/dist/react-bulma-components.min.css";
 import "./navbar.css";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from "react-router-dom";
-// import Vendors from "../../pages/Vendors.js"
-
 
 const NavBar = () => {
   const { user, logout } = useAuth0();
@@ -13,11 +11,10 @@ const NavBar = () => {
     const burger = document.querySelector(".navbar-burger");
     const menu = document.querySelector(".navbar-menu");
     burger.addEventListener("click", function () {
-        burger.classList.toggle("is-active")
-        menu.classList.toggle("is-active")
-  });
-};
-
+      burger.classList.toggle("is-active");
+      menu.classList.toggle("is-active");
+    });
+  }
 
   return (
     <nav
@@ -28,7 +25,7 @@ const NavBar = () => {
       <div className="container">
         <div className="navbar-brand">
           <figure className="image is-32x32 pt-3">
-          <img className="login-img is-rounded" src={user.picture} />
+            <img className="login-img is-rounded" src={user.picture} />
           </figure>
           <p className="login-name pl-3 pt-3">{user.name}</p>
           <div
@@ -44,45 +41,36 @@ const NavBar = () => {
         </div>
         <div className="navbar-menu" id="navbar-menu">
           <div className="navbar-end">
-              <a
-                className="navbar-item"
-                id="navbar-font"
-                href="./events"
-              >
-                Home
-              </a>
-              <a
-                className="navbar-item is-hidden"
-                id="navbar-font"
-                href="./budget"
-              >
-                Budget
-              </a>
-              <a
-                className="navbar-item is-hidden"
-                id="navbar-font"
-                href="./calendar"
-              >
-                Calendar
-              </a>
-              
-              <a
-                className="navbar-item is-hidden"
-                id="navbar-font"
-               >
-              </a>
+            <a className="navbar-item" id="navbar-font" href="./events">
+              Home
+            </a>
+            <a
+              className="navbar-item is-hidden"
+              id="navbar-font"
+              href="./budget"
+            >
+              Budget
+            </a>
+            <a
+              className="navbar-item is-hidden"
+              id="navbar-font"
+              href="./calendar"
+            >
+              Calendar
+            </a>
 
-              <Link
-                className="navbar-item "
-                id="navbar-font"
-                onClick={() => logout({ returnTo: window.location.origin })}
-              >
-                Log Out
-              </Link>
-               </div>
+            <a className="navbar-item is-hidden" id="navbar-font"></a>
+
+            <Link
+              className="navbar-item "
+              id="navbar-font"
+              onClick={() => logout({ returnTo: window.location.origin })}
+            >
+              Log Out
+            </Link>
           </div>
         </div>
-      {/* </div> */}
+      </div>
     </nav>
   );
 };

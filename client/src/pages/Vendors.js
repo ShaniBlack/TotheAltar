@@ -3,12 +3,11 @@ import VendorCard from "../components/VendorCard/VendorCard";
 import API from "../utils/API";
 import "react-bulma-components/dist/react-bulma-components.min.css";
 import { Link } from "react-router-dom";
-//import VendorForm from "../components/Forms/VendorForm";
 import VendorCardModal from "../components/VendorCard/VendorCardModal";
 import "./Vendors.css";
 import { useLocation } from "react-router-dom";
 
-export default function Vendors() {
+export default function Vendors(props) {
   const [vendors, setVendors] = useState([]);
   const [visible, setVisible] = useState(false);
   const [filteredVendors, setFilteredVendors] = useState([]);
@@ -31,7 +30,6 @@ export default function Vendors() {
   let location = useLocation();
 
   useEffect(() => {
-    console.log(location.state.id);
     loadVendors();
   }, []);
 
@@ -39,7 +37,8 @@ export default function Vendors() {
     setFilteredVendors(
       vendors.filter(
         (vendor) =>
-          vendor.category === category && vendor.event_id === location.state.id
+          vendor.category === category &&
+          vendor.event_id === props.currentEventId
       )
     );
   }, [category, vendors, location.state]);
@@ -89,7 +88,12 @@ export default function Vendors() {
                   <div className="dropdown-menu" id="dropdown-menu" role="menu">
                     <div className="dropdown-content">
                       {categories.map((category) => (
-                        <a className="dropdown-item" onClick={() => setCategory(category)}>{category}</a>
+                        <a
+                          className="dropdown-item"
+                          onClick={() => setCategory(category)}
+                        >
+                          {category}
+                        </a>
                       ))}
                     </div>
                   </div>
@@ -109,7 +113,10 @@ export default function Vendors() {
 
               <div className="bg-img">
                 {visible ? (
-                  <VendorCardModal />
+                  <VendorCardModal
+                    currentEventId={props.currentEventId}
+                    loadVendors={loadVendors}
+                  />
                 ) : (
                   <Link
                     class="has-text-weight-bold"

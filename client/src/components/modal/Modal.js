@@ -1,6 +1,4 @@
 import React from "react";
-import Scripts from "../"
-// import { useHistory } from "react-router-dom";
 
 export default function Modal(props) {
   return (
@@ -20,7 +18,7 @@ export default function Modal(props) {
           <div class="modal-background"></div>
           <div class="modal-content">
             <div>
-             <form>
+              <form>
                 <p>
                   <label>
                     Vendor Name:
@@ -133,19 +131,6 @@ export default function Modal(props) {
           <button class="modal-close is-large" aria-label="close"></button>
         </div>
       </div>
-
-      <script>
-        {/* $(".modal-button").click(function() {
-            const target = $(this).data("target");
-            $("html").addClass("is-clipped");
-            $(target).addClass("is-active");
-         });
-         
-         $(".modal-close").click(function() {
-            $("html").removeClass("is-clipped");
-            $(this).parent().removeClass("is-active");
-         }); */}
-      </script>
     </div>
   );
 }

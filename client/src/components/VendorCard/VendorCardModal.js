@@ -1,17 +1,12 @@
 import React, { useState, useEffect } from "react";
-//import ReactDOM from "react-dom";
 import "bulma/css/bulma.css";
 import "./VendorCardModal";
 import ScriptTag from "react-script-tag";
 import VendorForm from "../Forms/VendorForm";
-//var Modal = require("react-bootstrap-modal");
 
 export default function VendorCaroModal(props) {
   const [isModal, setIsModal] = useState(true);
   const active = isModal ? "is-active" : "";
-  // const [show, setShow] = useState(false);
-  // const handleClose = () => setShow(false);
-  // const handleShow = () => setShow(true);
 
   const handleClick = () => {
     setIsModal({ isModal: isModal });
@@ -31,7 +26,10 @@ export default function VendorCaroModal(props) {
             />
           </header>
           <section className="modal-card-body">
-            <VendorForm />
+            <VendorForm
+              currentEventId={props.currentEventId}
+              loadVendors={props.loadVendors}
+            />
             <a className="button">Cancel</a>
           </section>
         </div>

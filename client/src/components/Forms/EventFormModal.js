@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-//import ReactDOM from "react-dom";
+import React, { useState } from "react";
 import "bulma/css/bulma.css";
 import "../VendorCard/VendorCardModal";
 import ScriptTag from "react-script-tag";
@@ -15,11 +14,6 @@ export default function VendorCaroModal(props) {
 
   return (
     <div>
-      {/* <button
-        onClick={handleClick}
-        className="button is-small is-info"
-      ></button> */}
-      {/* <h1>Vendor Information</h1> */}
       <div className={`modal ${active}`}>
         <div className="modal-background" />
         <div className="modal-card">
@@ -28,7 +22,6 @@ export default function VendorCaroModal(props) {
             <button
               onClick={handleClick}
               className="delete"
-              //onClick={Modal.propTypes.closeModal}
               aria-label="close"
             />
           </header>

@@ -1,24 +1,11 @@
 import React, { useState, useEffect } from "react";
-//import ReactDOM from "react-dom";
 import "bulma/css/bulma.css";
 import "./VendorCardModal";
 import ScriptTag from "react-script-tag";
-import Modal from 'react-bootstrap-modal';
 
 export default function EditVendorCaroModal(props) {
   const [isModal, setIsModal] = useState(true);
   const active = isModal ? "is-active" : "";
-  // const Modal = ({ closeModal, setIsModal }) => {
-  //   if (!setIsModal) {
-  //     return null;
-  //   }
-  // };
-
-  // Modal.propTypes = {
-  //   closeModal: React.PropTypes.func.isRequired,
-  //   modalState: React.PropTypes.bool.isRequired,
-  //   title: React.PropTypes.string,
-  // };
 
   const handleClick = () => {
     setIsModal({ isModal: isModal });
@@ -26,11 +13,6 @@ export default function EditVendorCaroModal(props) {
 
   return (
     <div>
-      {/* <button
-        onClick={handleClick}
-        className="button is-small is-info"
-      ></button> */}
-      {/* <h1>Vendor Information</h1> */}
       <div className={`modal ${active}`}>
         <div className="modal-background" />
         <div className="modal-card">
@@ -39,7 +21,6 @@ export default function EditVendorCaroModal(props) {
             <button
               onClick={handleClick}
               className="delete"
-              //onClick={Modal.propTypes.closeModal}
               aria-label="close"
             />
           </header>
@@ -54,9 +35,7 @@ export default function EditVendorCaroModal(props) {
                   </label>
                 </p>
                 <p>
-                  <label>
-                    Category: {props.category}
-                  </label>
+                  <label>Category: {props.category}</label>
                 </p>
                 <p>
                   <label>
