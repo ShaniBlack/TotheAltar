@@ -1,18 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
 import API from "../../utils/API";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function EventForm() {
   const history = useHistory();
-
-  const [Event, setEvent] = useState({
-    Name: "",
-    Date: "",
-    SpouseOneName: "",
-    SpouseTwoName: "",
-    Budget: "",
-    EstGuest: "",
-  });
+  const { user } = useAuth0();
 
   const onCreateEvent = (e) => {
     e.preventDefault();
@@ -23,6 +16,7 @@ function EventForm() {
       bride_groom2: e.target.SpouseTwoName.value,
       budget: e.target.Budget.value,
       estimated_guests: e.target.EstGuest.value,
+      user_email: user.email,
     }).then(() => history.push("/vendors"));
   };
 

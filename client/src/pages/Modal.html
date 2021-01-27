@@ -1,0 +1,123 @@
+Live Demo
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+      <title>Bulma Elements Example</title>
+      <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+      <script src = "https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+      <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+   </head>
+   
+   <body>
+      <section class = "section">
+         <div class = "container">
+            <span class = "title">
+               Image Modal
+            </span>
+            <br>
+            <br>
+            
+            <p>
+               <a class = "button is-primary modal-button" data-target = "#modal">Launch image modal</a>
+            </p>
+            <div id = "modal" class = "modal">
+               <div class = "modal-background"></div>
+               <div class = "modal-content">
+                <div>
+                    <h2>New Vendor</h2>
+                    <form onSubmit={onCreateVendor}>
+                      <p>
+                        <label>
+                          Vendor Name:
+                          <input type="text" name="Name"></input>
+                        </label>
+                      </p>
+                      <p>
+                        <select name="CategoryOption">
+                          Category:
+                          <option>Bakery</option>
+                          <option>Catering</option>
+                          <option>Florist</option>
+                          <option>Jeweler</option>
+                          <option>Music</option>
+                          <option>Officiator</option>
+                          <option>Rentals</option>
+                          <option>Venue</option>
+                          <option>Wedding Attire</option>
+                          <option>Misc.</option>
+                        </select>
+                      </p>
+                      <p>
+                        <label>
+                          Contact Name:
+                          <input type="text" name="ContactName"></input>
+                        </label>
+                      </p>
+                      <p>
+                        <label>
+                          Phone Number:
+                          <input type="text" name="PhoneNumber"></input>
+                        </label>
+                      </p>
+                      <p>
+                        <label>
+                          Vendor Email:
+                          <input type="text" name="Email"></input>
+                        </label>
+                      </p>
+                      <p>
+                        <label>
+                          Vendor Address:
+                          <input type="text" name="Address"></input>
+                        </label>
+                      </p>
+                      <p>
+                        <label>
+                          Projected Cost:
+                          <input type="text" name="ProjectedCost"></input>
+                        </label>
+                      </p>
+                      <p>
+                        <label>
+                          Actual Cost:
+                          <input type="text" name="ActualCost"></input>
+                        </label>
+                      </p>
+                      <p>
+                        <label>
+                          Contract:
+                          <input type="text" name="Contract"></input>
+                        </label>
+                      </p>
+                      <p>
+                        <label>
+                          Notes:
+                          <input type="text" name="Notes"></input>
+                        </label>
+                      </p>
+                      <button>Submit</button>
+                    </form>
+                  </div>
+               </div>
+               <button class = "modal-close is-large" aria-label="close"></button>
+            </div>
+         </div>
+      </section>
+      
+      <script>
+         $(".modal-button").click(function() {
+            var target = $(this).data("target");
+            $("html").addClass("is-clipped");
+            $(target).addClass("is-active");
+         });
+         
+         $(".modal-close").click(function() {
+            $("html").removeClass("is-clipped");
+            $(this).parent().removeClass("is-active");
+         });
+      </script>
+      
+   </body>
+</html>

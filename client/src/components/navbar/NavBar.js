@@ -16,7 +16,11 @@ function toggleBurger() {
 const NavBar = () => {
   const { user, logout } = useAuth0();
   return (
-    <nav className="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <nav
+      className="navbar is-fixed-top"
+      role="navigation"
+      aria-label="main navigation"
+    >
       <div className="container">
         <div className="navbar-brand">
           <figure className="image is-32x32 pt-3">
@@ -36,7 +40,6 @@ const NavBar = () => {
         </div>
         <div className="navbar-menu" id="navbar-menu">
           <div className="navbar-end">
-            {/* <div className="navbar-brand"> */}
               <a
                 className="navbar-item"
                 id="navbar-font"
@@ -44,7 +47,6 @@ const NavBar = () => {
               >
                 Home
               </a>
-              {/* hidden for future features */}
               <a
                 className="navbar-item is-hidden"
                 id="navbar-font"
@@ -52,7 +54,6 @@ const NavBar = () => {
               >
                 Budget
               </a>
-              {/* hidden for future features */}
               <a
                 className="navbar-item is-hidden"
                 id="navbar-font"

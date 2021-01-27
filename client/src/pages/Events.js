@@ -4,31 +4,52 @@ import EventForm from "../components/Forms/EventForm";
 import API from "../utils/API";
 import "./Events.css";
 import { useHistory } from "react-router-dom";
-import { useAuth0 } from "@auth0/auth0-react";
 import Moment from "react-moment";
+import { useAuth0 } from "@auth0/auth0-react";
 
 export default function Events() {
   const { user } = useAuth0();
   const [events, setEvents] = useState([]);
   const [visible, setVisible] = useState(false);
   const history = useHistory();
+  const [filteredEvents, setFilteredEvents] = useState([]);
 
   useEffect(() => {
     loadEvents();
   }, []);
 
+  useEffect(() => {
+    setFilteredEvents(
+      events.filter((event) => event.user_email === user.email)
+    );
+  }, [user.email, events]);
+
+  function consoleArt() {
+    console.log("-oooooooo/-      .+ooooooooo:  +ooo+        oooo/");
+    console.log("+MMMMMMMMMMm+   -NMMMMMMMMMMs  +MMMM:      /MMMM/");
+    console.log("+MMMNyyydMMMMy  /MMMMyyyyyyy/   mMMMd      mMMMd");
+    console.log("+MMMm    :MMMM. /MMMN           /MMMM/    /MMMM:");
+    console.log("+MMMm    .MMMM- /MMMN            dMMMm    mMMMh");
+    console.log("+MMMm    .MMMM- /MMMMyyyy+       :MMMM/  +MMMM-");
+    console.log("+MMMm    .MMMM- /MMMMMMMMy        hMMMm  NMMMy");
+    console.log("+MMMm    .MMMM- /MMMMoooo:        -MMMM+oMMMM-");
+    console.log("+MMMm    .MMMM- /MMMN              yMMMmNMMMy");
+    console.log("+MMMm    +MMMM. /MMMN              .MMMMMMMM.");
+    console.log("+MMMMdddNMMMMo  /MMMMddddddd+       sMMMMMMs");
+    console.log("+MMMMMMMMMNh:   .mMMMMMMMMMMs        yMMMMs");
+    console.log(".///////:-        -/////////-         .::.");
+  }
+
   function loadEvents() {
     API.getEvents()
       .then((res) => setEvents(res.data))
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err))
+      .then(consoleArt());
   }
 
   const heroClick = (id) => {
-    history.push("/vendors");
+    history.push("/vendors", { id });
   };
-  // API.getEvent(id)
-  // .then((res) => setEvents(res.data))
-  // .catch((err) => console.log(err));
 
   return (
     <>
@@ -43,12 +64,11 @@ export default function Events() {
           </div>
         </section>
 
-        {events.map((event) => (
+        {filteredEvents.map((event) => (
           <section className="hero">
             <div className="hero-body has-bg-image is-medium">
-              <div className="container has-text-centered is-3 is-fullhd is-4-desktop is-12-tablet is-12-mobile has-text-black event-hero">
-                <h1 className="title" id="hero-font"></h1>
-                <div className="wrapper" onClick={heroClick}>
+              <div className="container event-hero has-text-centered is-3 is-fullhd is-4-desktop is-12-tablet is-12-mobile has-text-black">
+                <div className="wrapper" onClick={() => heroClick(event.id)}>
                   <h1
                     className="columns is-centered has-text-weight-bold"
                     id="event-font"

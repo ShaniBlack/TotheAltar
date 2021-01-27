@@ -1,24 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Parisienne&display=swap");
 
 .vendors {
-    background-image: url("https://images.unsplash.com/photo-1554354799-5986245f7e46?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDV8fHdlZGRpbmclMjBjYWtlfGVufDB8fDB8&auto=format&fit=crop&w=900&q=60");
-    background-size: cover;
-    background-position: center center;
-    /* background-repeat: no-repeat; */
-    background-attachment: fixed;
-    background-color: rgba(255, 255, 255, 0.6);
+  background-image: url("https://images.unsplash.com/photo-1554354799-5986245f7e46?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDV8fHdlZGRpbmclMjBjYWtlfGVufDB8fDB8&auto=format&fit=crop&w=900&q=60");
+  background-size: cover;
+  background-position: center center;
+  /* background-repeat: no-repeat; */
+  background-attachment: fixed;
+  background-color: rgba(255, 255, 255, 0.6);
   background-blend-mode: lighten;
   height: 200vh;
-  }
+}
 
 .position {
-    position: fixed;
+  position: fixed;
 }
 
 .menu {
-    font-family: 'Parisienne', cursive;
-    font-weight: bold;
-    font-size: 30px;
-    margin-left: 20px;
+  font-family: "Parisienne", cursive;
+  font-weight: bold;
+  font-size: 30px;
+  margin-left: 20px;
 }
 
