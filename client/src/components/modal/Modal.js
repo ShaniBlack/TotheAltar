@@ -1,5 +1,5 @@
 import React from "react";
-// import API from "../../utils/API"
+import Scripts from "../"
 // import { useHistory } from "react-router-dom";
 
 export default function Modal(props) {
@@ -20,8 +20,7 @@ export default function Modal(props) {
           <div class="modal-background"></div>
           <div class="modal-content">
             <div>
-              {/* <h2>View Vendor</h2> */}
-              <form>
+             <form>
                 <p>
                   <label>
                     Vendor Name:

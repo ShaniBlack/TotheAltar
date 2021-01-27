@@ -2,12 +2,15 @@ import React, { useState, useEffect } from "react";
 //import ReactDOM from "react-dom";
 import "bulma/css/bulma.css";
 import "./style.css";
+//import importScript from "../Forms/ImportScript"
 
 export default function VendorCaroModal(prop) {
   const [isModal, setIsModal] = useState(false);
   const active = isModal ? "is-active" : "";
+  //const Demo = props => {
+  //   importScript("/path/to/resource.js");
+  // }
   
-
   const handleClick = () => {
     setIsModal({ isModal: isModal });
   };
@@ -149,9 +152,7 @@ export default function VendorCaroModal(prop) {
       <button onClick={handleClick} className="button is-small is-info">
         Show Modal
       </button>
+     {/* <ImportScript/> */}
     </div>
   );
 }
-
-// const rootElement = document.getElementById("root");
-// ReactDOM.render(<App />, rootElement);

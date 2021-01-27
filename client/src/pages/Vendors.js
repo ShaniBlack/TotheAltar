@@ -32,6 +32,7 @@ export default function Vendors() {
   let location = useLocation();
 
   useEffect(() => {
+    console.log(location.state.id)
     loadVendors();
   }, []);
 
