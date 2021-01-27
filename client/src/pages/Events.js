@@ -51,7 +51,6 @@ export default function Events() {
           <section className="hero">
             <div className="hero-body has-bg-image is-medium">
               <div className="container has-text-centered is-3 is-fullhd is-4-desktop is-12-tablet is-12-mobile has-text-black">
-                <h1 className="title" id="hero-font"></h1>
                 <div className="wrapper" onClick={() => heroClick(event.id)}>
                   <h1
                     className="columns is-centered has-text-weight-bold"
