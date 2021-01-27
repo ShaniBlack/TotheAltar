@@ -38,7 +38,7 @@ const NavBar = () => {
           <div className="navbar-end">
             {/* <div className="navbar-brand"> */}
               <a
-                className="navbar-item has-text-black"
+                className="navbar-item"
                 id="navbar-font"
                 href="./events"
               >
@@ -46,7 +46,7 @@ const NavBar = () => {
               </a>
               {/* hidden for future features */}
               <a
-                className="navbar-item has-text-black is-hidden"
+                className="navbar-item is-hidden"
                 id="navbar-font"
                 href="./budget"
               >
@@ -54,14 +54,14 @@ const NavBar = () => {
               </a>
               {/* hidden for future features */}
               <a
-                className="navbar-item has-text-black is-hidden"
+                className="navbar-item is-hidden"
                 id="navbar-font"
                 href="./calendar"
               >
                 Calendar
               </a>
               <Link
-                className="navbar-item has-text-black"
+                className="navbar-item "
                 id="navbar-font"
                 onClick={() => logout({ returnTo: window.location.origin })}
               >
