@@ -1,12 +1,10 @@
 import React from "react";
-//import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import API from "../../utils/API";
-import VendorCardModal from "../VendorCard/VendorCardModal";
 import { useLocation } from "react-router-dom";
 
-function VendorForm() {
-  // const history = useHistory();
-
+function VendorForm(props) {
+  const history = useHistory();
   let location = useLocation();
 
   const onCreateVendor = (e) => {
@@ -21,32 +19,124 @@ function VendorForm() {
       actual_cost: e.target.ActualCost.value,
       contract: e.target.Contract.value,
       notes: e.target.Notes.value,
-      event_id: location.state.id,
-    });
-    // .then(() => history.push("/vendors"));
+      event_id: 1,
+    })
+    // .then(() => push("/vendors"));
   };
-  //MODAL SCRIPT ITEMS--------------------------------
-  // const modal = document.querySelector(".modal");
-  // const btn = document.querySelector("#btn");
-  // const close = document.querySelector(".modal-close");
-
-  // btn.addEventListener("click", function () {
-  //   modal.style.display = "block";
-  // });
-
-  // close.addEventListener("click", function () {
-  //   modal.style.display = "none";
-  // });
-
-  // window.addEventListener("click", function (event) {
-  //   if (event.target.className === "modal-background") {
-  //     modal.style.display = "none";
-  //   }
-  // });
 
   return (
-    <div>
-      <VendorCardModal createVendor={onCreateVendor} />
+    <div className="box">
+      <h2>New Vendor</h2>
+      <form onSubmit={onCreateVendor}>
+        <p>
+          <label>
+            Vendor Name:
+            <input
+              class="field is-pulled-right"
+              type="text"
+              name="Name"
+            ></input>
+          </label>
+        </p>
+        <p>
+          <label>
+            Category:
+            <select class="field is-pulled-right" name="CategoryOption">
+              <option>Bakery</option>
+              <option>Catering</option>
+              <option>Florist</option>
+              <option>Jeweler</option>
+              <option>Music</option>
+              <option>Officiator</option>
+              <option>Rentals</option>
+              <option>Venue</option>
+              <option>Wedding Attire</option>
+              <option>Miscellaneous</option>
+            </select>
+          </label>
+        </p>
+        <p>
+          <label>
+            Contact Name:
+            <input
+              class="field is-pulled-right"
+              type="text"
+              name="ContactName"
+            ></input>
+          </label>
+        </p>
+        <p>
+          <label>
+            Phone Number:
+            <input
+              class="field is-pulled-right"
+              type="text"
+              name="PhoneNumber"
+            ></input>
+          </label>
+        </p>
+        <p>
+          <label>
+            Vendor Email:
+            <input
+              class="field is-pulled-right"
+              type="text"
+              name="Email"
+            ></input>
+          </label>
+        </p>
+        <p>
+          <label>
+            Vendor Address:
+            <input
+              class="field is-pulled-right"
+              type="text"
+              name="Address"
+            ></input>
+          </label>
+        </p>
+        <p>
+          <label>
+            Projected Cost:
+            <input
+              class="field is-pulled-right"
+              type="text"
+              name="ProjectedCost"
+            ></input>
+          </label>
+        </p>
+        <p>
+          <label>
+            Actual Cost:
+            <input
+              class="field is-pulled-right"
+              type="text"
+              name="ActualCost"
+            ></input>
+          </label>
+        </p>
+        <p>
+          <label>
+            Contract:
+            <input
+              class="field is-pulled-right"
+              type="text"
+              name="Contract"
+            ></input>
+          </label>
+        </p>
+        <p>
+          <label>
+            Notes:
+            <input
+              class="field is-pulled-right"
+              type="text"
+              name="Notes"
+            ></input>
+          </label>
+        </p>
+        <button>Submit</button>
+      </form>
     </div>
   );
 }

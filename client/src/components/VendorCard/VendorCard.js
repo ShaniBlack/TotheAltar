@@ -2,12 +2,11 @@ import React, { useState } from "react";
 // import Modal from "../modal/Modal";
 import VendorForm from "../../components/Forms/VendorForm";
 import { Link } from "react-router-dom";
-
-
+import EditVendorCaroModal from "./EditVendorCardModal";
 
 export default function VendorCard(props) {
   const [visible, setVisible] = useState(false);
-  
+
   return (
     <div className="card">
       <div className="card-image">
@@ -35,20 +34,34 @@ export default function VendorCard(props) {
         </div>
 
         <div className="media-content">
-          <p className="subtitle ">Phone Number: {props.phone}</p>
-          <p className="subtitle">Projected Cost: {props.projected_cost}</p>
-          <p className="subtitle">Acutal Cost: {props.actual_cost}</p>
-          <p className="subtitle">Notes: {props.notes}</p>
-          <a href="../" target="_blank">View Contract  </a>
-          <button className="button is-small has-background-danger-light" id="delete-btn" onClick={() => props.deleteCard(props.id)}>Delete</button>
-          <button className="button is-small has-background-info-light" id="update-btn">
-              {visible ? (
-                <VendorForm class="box"></VendorForm>
-              ) : (
-                <Link onClick={() => setVisible(true)}>Edit Vendor</Link>
-              )}
-            </button>
+          <p className="subtitle is-6">Phone Number: {props.phone}</p>
+          <p className="subtitle is-6">
+            Projected Cost: {props.projected_cost}
+          </p>
+          <p className="subtitle is-6">Acutal Cost: {props.actual_cost}</p>
+          <p className="subtitle is-6">Notes: {props.notes}</p>
+          <a href="../" target="_blank">
+            View Contract{" "}
+          </a>
+          <button
+            className="button is-small has-background-danger-light"
+            id="delete-btn"
+            onClick={() => props.deleteCard(props.id)}
+          >
+            Delete
+          </button>
 
+          {/* <div class="content has-text-centered"> */}
+          <button
+            className="button is-small has-background-danger-light"
+            id="edit-btn"
+          >
+            {visible ? (
+              <EditVendorCaroModal class="box"></EditVendorCaroModal>
+            ) : (
+              <Link onClick={() => setVisible(true)}>Edit Vendor</Link>
+            )}
+          </button>
         </div>
       </div>
     </div>
