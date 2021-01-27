@@ -1,8 +1,6 @@
 import React from "react";
-// import "../../../src/images";
 
 export default function VendorCard(props) {
-  
   return (
     <div className="card">
       <div className="card-image">
@@ -31,12 +29,27 @@ export default function VendorCard(props) {
 
         <div className="media-content">
           <p className="subtitle is-6">Phone Number: {props.phone}</p>
-          <p className="subtitle is-6">Projected Cost: {props.projected_cost}</p>
+          <p className="subtitle is-6">
+            Projected Cost: {props.projected_cost}
+          </p>
           <p className="subtitle is-6">Acutal Cost: {props.actual_cost}</p>
           <p className="subtitle is-6">Notes: {props.notes}</p>
-          <a href="../" target="_blank">View Contract  </a>
-          <button className="button is-small has-background-danger-light" id="delete-btn" onClick={() => props.deleteCard(props.id)}>Delete</button>
-          <button className="button is-small has-background-info-light" id="update-btn">Update</button>
+          <a href="../" target="_blank">
+            View Contract{" "}
+          </a>
+          <button
+            className="button is-small has-background-danger-light"
+            id="delete-btn"
+            onClick={() => props.deleteCard(props.id)}
+          >
+            Delete
+          </button>
+          <button
+            className="button is-small has-background-info-light"
+            id="update-btn"
+          >
+            Update
+          </button>
         </div>
       </div>
     </div>

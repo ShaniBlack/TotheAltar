@@ -1,5 +1,3 @@
-// to add to Vendor Form
-
 export default function VendorDropdown() {
   <div className="control">
     <div className="select" id="category-menu">
