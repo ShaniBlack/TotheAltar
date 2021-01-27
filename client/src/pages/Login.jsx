@@ -1,15 +1,19 @@
-import React from "react";
+import React  from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import "./Login.css";
-// import API from "../utils/API"
 
 export default function Login(props) {
   const { loginWithRedirect } = useAuth0();
 
   return (
-    <div className="login-wrapper">
-      <h1>Please Log In</h1>
-      <button onClick={loginWithRedirect}>Log In Auth0</button>
+    <div className="login">
+    <div className="login-wrapper mt-6">
+      <h1 className="login-font">To the Altar</h1>
+      <button className="button is-rounded btn-font" onClick={loginWithRedirect}>Login</button>
+      <h1 className="description">
+        Safely keeping all your wedding plans in one place, all the way up to the altar
+      </h1>
+    </div>
     </div>
   );
 }

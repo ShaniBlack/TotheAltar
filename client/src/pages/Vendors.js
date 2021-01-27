@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import VendorForm from "../components/Forms/VendorForm";
 import "./Vendors.css";
 import { useLocation } from "react-router-dom";
+import vendorsCss from "./Vendors.css";
 
 export default function Vendors(props) {
   const [vendors, setVendors] = useState([]);
@@ -57,44 +58,46 @@ export default function Vendors(props) {
 
   return (
     <>
-      <div className="columns is-multiline is-fullheight">
-        <div className="column-gap is-1 position">
-          <aside className="menu">
-            <ul class="menu-list">
-              {categories.map((category) => (
-                <a onClick={() => setCategory(category)}>{category}</a>
-              ))}
-            </ul>
-            <div className="bg-img">
-              {visible ? (
-                <VendorForm></VendorForm>
-              ) : (
-                <Link onClick={() => setVisible(true)}>
-                  Create New Vendor +
-                </Link>
-              )}
-            </div>
-          </aside>
-        </div>
-
-        <div className="container">
-          <div className="columns is-multiline">
-            {filteredVendors.map((vendor) => (
-              <div className="column is-5">
-                <VendorCard
-                  className="box"
-                  deleteCard={deleteCard}
-                  id={vendor.id}
-                  key={vendor.id}
-                  vendor={vendor.vendor_name}
-                  contact={vendor.contact_name}
-                  phone={vendor.phone_number}
-                  projected_cost={vendor.projected_cost}
-                  actual_cost={vendor.actual_cost}
-                  notes={vendor.notes}
-                />
+      <div className="vendors">
+        <div className="columns is-multiline is-fullheight mt-6">
+          <div className="column-gap is-1 position">
+            <aside className="menu pt-6">
+              <ul class="menu-list">
+                {categories.map((category) => (
+                  <a onClick={() => setCategory(category)}>{category}</a>
+                ))}
+              </ul>
+              <div className="bg-img">
+                {visible ? (
+                  <VendorForm></VendorForm>
+                ) : (
+                  <Link onClick={() => setVisible(true)}>
+                    Create New Vendor +
+                  </Link>
+                )}
               </div>
-            ))}
+            </aside>
+          </div>
+
+          <div className="container pt-6">
+            <div className="columns is-multiline">
+              {filteredVendors.map((vendor) => (
+                <div className="column is-5">
+                  <VendorCard
+                    className="box"
+                    deleteCard={deleteCard}
+                    id={vendor.id}
+                    key={vendor.id}
+                    vendor={vendor.vendor_name}
+                    contact={vendor.contact_name}
+                    phone={vendor.phone_number}
+                    projected_cost={vendor.projected_cost}
+                    actual_cost={vendor.actual_cost}
+                    notes={vendor.notes}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
