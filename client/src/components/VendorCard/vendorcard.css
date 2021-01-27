@@ -29,7 +29,7 @@
 #delete-btn,
 #update-btn {
   font-family: 'Parisienne', cursive;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: bold;
   color: black;
 }
@@ -41,14 +41,19 @@
 
 }
 
+.view-link {
+  font-family: "Parisienne", cursive;
+  font-size: 25px;
+}
+
 .vendor-resp.is-12-tablet {
   font-family: "Parisienne", cursive;
   font-weight: bold;
   font-size: 15px;
 }
 
-.vendor-resp.is-12-mobile {
+/* .vendor-resp.is-12-mobile {
   font-family: "Parisienne", cursive;
   font-weight: bold;
   font-size: 10px;
-}
+} */
