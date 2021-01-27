@@ -25,15 +25,15 @@ export default function VendorCard(props) {
           </div>
           <div className="media-content">
             <p className="title is-4">{props.vendor}</p>
-            <p className="subtitle is-6">Contact: {props.contact}</p>
+            <p className="subtitle">Contact: {props.contact}</p>
           </div>
         </div>
 
         <div className="media-content">
-          <p className="subtitle is-6">Phone Number: {props.phone}</p>
-          <p className="subtitle is-6">Projected Cost: {props.projected_cost}</p>
-          <p className="subtitle is-6">Acutal Cost: {props.actual_cost}</p>
-          <p className="subtitle is-6">Notes: {props.notes}</p>
+          <p className="subtitle ">Phone Number: {props.phone}</p>
+          <p className="subtitle">Projected Cost: {props.projected_cost}</p>
+          <p className="subtitle">Acutal Cost: {props.actual_cost}</p>
+          <p className="subtitle">Notes: {props.notes}</p>
           <a href="../" target="_blank">View Contract  </a>
           <button className="button is-small has-background-danger-light" id="delete-btn" onClick={() => props.deleteCard(props.id)}>Delete</button>
           <button className="button is-small has-background-info-light" id="update-btn">Update</button>

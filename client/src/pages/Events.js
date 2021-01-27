@@ -35,7 +35,7 @@ export default function Events() {
     <div className="events">
       <section className="hero mt-6">
         <div className="hero-body is-large">
-          <div className="container has-text-centered is-3 is-fullhd is-4-desktop is-12-tablet is-12-mobile has-text-black">
+          <div className="container welcome-banner has-text-centered is-3 is-fullhd is-4-desktop is-12-tablet is-12-mobile has-text-black">
             <h1 class="title" id="user-font">
               Hi {user.name}! Welcome back!
             </h1>
@@ -46,7 +46,7 @@ export default function Events() {
       {events.map((event) => (
         <section className="hero">
           <div className="hero-body has-bg-image is-medium">
-            <div className="container has-text-centered is-3 is-fullhd is-4-desktop is-12-tablet is-12-mobile has-text-black">
+            <div className="container has-text-centered is-3 is-fullhd is-4-desktop is-12-tablet is-12-mobile has-text-black event-hero">
               <h1 className="title" id="hero-font"></h1>
               <div className="wrapper" onClick={heroClick}>
                 <h1
@@ -71,16 +71,16 @@ export default function Events() {
               </h1>
               </div>
             </div>
-      <div className="create-event">
+          </div>
+        </section>
+      ))}
+            <div className="container create-event  has-text-black has-text-centered is-3 is-fullhd is-4-desktop is-12-tablet is-12-mobile">
         {visible ? (
           <EventForm></EventForm>
         ) : (
           <Link onClick={() => setVisible(true)}>Create New Event +</Link>
         )}
       </div>
-          </div>
-        </section>
-      ))}
       </div>
     </>
   );

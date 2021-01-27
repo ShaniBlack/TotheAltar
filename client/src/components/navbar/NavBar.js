@@ -1,5 +1,6 @@
 import React from "react";
 import "react-bulma-components/dist/react-bulma-components.min.css";
+// import "./bulma.js";
 import "./navbar.css";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from "react-router-dom";
@@ -11,9 +12,9 @@ const NavBar = () => {
       <div className="container">
         <div className="navbar-brand">
           <figure className="image is-32x32 pt-3">
-          <img className="is-rounded" src={user.picture} />
+          <img className="login-img is-rounded" src={user.picture} />
           </figure>
-          <p className="login-name py-3">{user.name}</p>
+          <p className="login-name pl-3 pt-3">{user.name}</p>
           <div
             className="button navbar-burger burger"
             data-target="navbar-menu"
@@ -26,15 +27,11 @@ const NavBar = () => {
         </div>
         <div className="navbar-menu">
           <div className="navbar-end">
-            <div className="navbar-brand">
-              {/* <figure className="image is-50x25">
-                <img src="../images/alyssa-hurley-rings.jpg" alt="logo_transparent">
-                    </img>
-            </figure> */}
+            {/* <div className="navbar-brand"> */}
               <a
                 className="navbar-item has-text-black"
                 id="navbar-font"
-                href="./home"
+                href="./events"
               >
                 Home
               </a>
@@ -61,14 +58,14 @@ const NavBar = () => {
               >
                 Log Out
               </Link>
-              <Link
+              {/* <Link
                 className="navbar-item has-text-black"
                 id="navbar-font"
                 to="/login"
               >
                 Log in
-              </Link>
-            </div>
+              </Link> */}
+            {/* </div> */}
             ​
           </div>
         </div>
