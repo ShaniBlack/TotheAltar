@@ -32,6 +32,7 @@ export default function Vendors() {
   let location = useLocation();
 
   useEffect(() => {
+    console.log(location.state.id)
     loadVendors();
   }, []);
 
@@ -86,10 +87,10 @@ export default function Vendors() {
               </div>
             </aside>
           </div>
-          <div className="container pt-6">
+          <div className="container pt-6 pl-6">
             <div className="columns is-multiline">
               {filteredVendors.map((vendor) => (
-                <div className="column is-5">
+                <div className="column is-5 is-offset-1 p-2">
                   <VendorCard
                     className="box"
                     deleteCard={deleteCard}

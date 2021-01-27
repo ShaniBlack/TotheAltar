@@ -56,7 +56,7 @@ export default function Events() {
       <div className="events">
         <section className="hero mt-6">
           <div className="hero-body is-large">
-            <div className="container has-text-centered is-3 is-fullhd is-4-desktop is-12-tablet is-12-mobile has-text-black">
+            <div className="container welcome-banner has-text-centered is-3 is-fullhd is-4-desktop is-12-tablet is-12-mobile">
               <h1 class="title" id="user-font">
                 Hi {user.name}! Welcome back!
               </h1>
@@ -67,7 +67,7 @@ export default function Events() {
         {filteredEvents.map((event) => (
           <section className="hero">
             <div className="hero-body has-bg-image is-medium">
-              <div className="container has-text-centered is-3 is-fullhd is-4-desktop is-12-tablet is-12-mobile has-text-black">
+              <div className="container event-hero has-text-centered is-3 is-fullhd is-4-desktop is-12-tablet is-12-mobile has-text-black">
                 <div className="wrapper" onClick={() => heroClick(event.id)}>
                   <h1
                     className="columns is-centered has-text-weight-bold"
@@ -94,7 +94,7 @@ export default function Events() {
             </div>
           </section>
         ))}
-        <div className="create-event">
+        <div className="container create-event has-text-centered is-3 is-fullhd is-4-desktop is-12-tablet is-12-mobile">
           {visible ? (
             <EventForm></EventForm>
           ) : (
