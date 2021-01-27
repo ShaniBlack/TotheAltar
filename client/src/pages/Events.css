@@ -6,7 +6,14 @@
 }
 
 #user-font {
-    font-size: 55px;
+    /* color:lightpink; */
+	font-size: 55px;
+    /* -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black; */
+    -webkit-text-stroke: 1px black;
+	-webkit-text-fill-color: white;
+    /* font-weight: bold; */
+
 }
 
 .event-hero {
@@ -17,6 +24,11 @@
     border-radius: 50px 20px;
 }
 
+.create-event {
+    font-family: 'Parisienne', cursive;
+    font-size: 30px;
+    font-weight: bold;
+}
 .events {
     background: url("https://images.unsplash.com/photo-1556918108-baaafd6a2010?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8d2VkZGluZ3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8cGxhbmV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60") no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -34,9 +46,3 @@
     font-size: 25px;
     font-weight: bold;
 };
-
-.create-event {
-    font-family: 'Parisienne', cursive;
-    font-size: 25px;
-    font-weight: bold;
-}
