@@ -9,6 +9,7 @@
     "axios": "^0.21.1",
     "bulma": "^0.8.2",
     "cors": "^2.8.5",
+    "history": "^5.0.0",
     "moment": "^2.29.1",
     "react": "^16.13.1",
     "react-bulma-components": "^3.4.0",
@@ -35,5 +36,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10"
   }
 }

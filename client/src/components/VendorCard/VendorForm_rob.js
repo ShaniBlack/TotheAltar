@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "react-bulma-components/dist/react-bulma-components.min.css";
 import API from "../../utils/API";
 
-function VendorForm() {
+function VendorFormRob() {
   const [formObject, setFormObject] = useState({
     vendor_name: "",
     category: "",
@@ -44,57 +44,72 @@ function VendorForm() {
   }
 
   return (
-    <form>
-      <label>
-        Vendor Name:
-        <input type="text" name="name" onChange={handleInputChange} />
-      </label>
-      <label>
-        Cateogry:
-        <input type="text" name="category" onChange={handleInputChange} />
-      </label>
-      <label>
-        Contact Name:
-        <input type="text" name="contactName" onChange={handleInputChange} />
-      </label>
-      <label>
-        Phone Number:
-        <input type="text" name="phoneNumber" onChange={handleInputChange} />
-      </label>
-      <label>
-        Email:
-        <input type="text" name="email" onChange={handleInputChange} />
-      </label>
-      <label>
-        Address:
-        <input type="text" name="address" onChange={handleInputChange} />
-      </label>
-      <label>
-        Protected Cost:
-        <input type="text" name="projectedCost" onChange={handleInputChange} />
-      </label>
-      <label>
-        Actual Cost:
-        <input type="text" name="actualCost" onChange={handleInputChange} />
-      </label>
-      <label>
-        Contract:
-        <input type="text" name="contract" onChange={handleInputChange} />
-      </label>
-      <input type="submit" value="Submit" />
-      <button
-        class="button is-success"
-        disabled={
-          !(
-            formObject.name &&
-            formObject.category &&
-            formObject.phoneNumber &&
-            formObject.category &&
-            formObject.projectedCost
-          )
-        }
-      />
-    </form>
-  );
+    <div class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card"></div>
+      <form>
+        <label>
+          Vendor Name:
+          <input type="text" name="name" onChange={handleInputChange} />
+        </label>
+        <label>
+          Cateogry:
+          <input type="text" name="category" onChange={handleInputChange} />
+        </label>
+        <label>
+          Contact Name:
+          <input type="text" name="contactName" onChange={handleInputChange} />
+        </label>
+        <label>
+          Phone Number:
+          <input type="text" name="phoneNumber" onChange={handleInputChange} />
+        </label>
+        <label>
+          Email:
+          <input type="text" name="email" onChange={handleInputChange} />
+        </label>
+        <label>
+          Address:
+          <input type="text" name="address" onChange={handleInputChange} />
+        </label>
+        <label>
+          Protected Cost:
+          <input
+            type="text"
+            name="projectedCost"
+            onChange={handleInputChange}
+          />
+        </label>
+        <label>
+          Actual Cost:
+          <input type="text" name="actualCost" onChange={handleInputChange} />
+        </label>
+        <label>
+          Contract:
+          <input type="text" name="contract" onChange={handleInputChange} />
+        </label>
+        <input type="submit" value="Submit" />
+        <button
+          class="button is-success"
+          disabled={
+            !(
+              formObject.name &&
+              formObject.category &&
+              formObject.phoneNumber &&
+              formObject.category &&
+              formObject.projectedCost
+            )
+          }
+           onClick={handleFormSubmit}
+        />
+      </form>
+    //   <footer class="modal-card-foot">
+    //     <button class="button is-info" onClick={handleFormSubmit}>
+    //       Submit Vendor
+    //     </button>
+    //   </footer>
+    // </div>
+
+   );
 }
-export default VendorForm;
+export default VendorFormRob;

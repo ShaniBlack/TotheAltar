@@ -12,6 +12,10 @@ export default function Vendors() {
   const [visible, setVisible] = useState(false);
   const [filteredVendors, setFilteredVendors] = useState([]);
   const [category, setCategory] = useState("");
+  const [editVendor, setEditVendor] = useState([]);
+
+  
+  
   const categories = [
     "Bakery",
     "Catering",
@@ -39,11 +43,18 @@ export default function Vendors() {
       )
     );
   }, [category, vendors, location.state]);
-
   function loadVendors() {
     API.getVendors()
       .then((res) => {
         setVendors(res.data);
+      })
+      .catch((err) => console.log(err));
+  }
+
+    function loadVendor(id) {
+    API.getVendor(id)
+      .then((res) => {
+        setEditVendor(res.data);
       })
       .catch((err) => console.log(err));
   }
@@ -53,7 +64,6 @@ export default function Vendors() {
       .then((res) => loadVendors())
       .catch((err) => console.log(err));
   }
-
   return (
     <>
       <div className="vendors">
@@ -76,7 +86,6 @@ export default function Vendors() {
               </div>
             </aside>
           </div>
-
           <div className="container pt-6">
             <div className="columns is-multiline">
               {filteredVendors.map((vendor) => (
@@ -84,6 +93,7 @@ export default function Vendors() {
                   <VendorCard
                     className="box"
                     deleteCard={deleteCard}
+                    editCard={loadVendor}
                     id={vendor.id}
                     key={vendor.id}
                     vendor={vendor.vendor_name}

@@ -10,7 +10,7 @@ module.exports = {
         estimated_guests: 500,
         createdAt: new Date(),
         updatedAt: new Date(),
-        user_email: "rycehe@gmail.com",
+        user_email: "robertsantos.dfw@gmail.com",
       },
     ]);
   },
