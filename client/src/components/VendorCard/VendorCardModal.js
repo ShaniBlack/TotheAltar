@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 //import ReactDOM from "react-dom";
 import "bulma/css/bulma.css";
-import "./style.css";
-//import importScript from "../Forms/ImportScript"
+import "./VendorCardModal";
+import ScriptTag from "react-script-tag";
+//import VendorForm from "../Forms/VendorForm"
 
-export default function VendorCaroModal(prop) {
+export default function VendorCaroModal(props) {
   const [isModal, setIsModal] = useState(false);
   const active = isModal ? "is-active" : "";
-  //const Demo = props => {
-  //   importScript("/path/to/resource.js");
-  // }
-  
+  const close = isModal ? "is-active" : false;
+  // const active = isModal ? "is-active" : "";
+
   const handleClick = () => {
     setIsModal({ isModal: isModal });
   };
@@ -18,7 +18,6 @@ export default function VendorCaroModal(prop) {
   return (
     <div className="App">
       <h1>Would you like to Create a Vendor?</h1>
-
       <div className={`modal ${active}`}>
         <div className="modal-background" />
         <div className="modal-card">
@@ -31,7 +30,7 @@ export default function VendorCaroModal(prop) {
             />
           </header>
           <section className="modal-card-body">
-            <form onSubmit={prop.createVendor}>
+            <form onSubmit={props.createVendor}>
               <p>
                 <label>
                   Vendor Name:
@@ -43,19 +42,21 @@ export default function VendorCaroModal(prop) {
                 </label>
               </p>
               <p>
-                <select class="field is-pulled-right" name="CategoryOption">
+                <label>
                   Category:
-                  <option>Bakery</option>
-                  <option>Catering</option>
-                  <option>Florist</option>
-                  <option>Jeweler</option>
-                  <option>Music</option>
-                  <option>Officiator</option>
-                  <option>Rentals</option>
-                  <option>Venue</option>
-                  <option>Wedding Attire</option>
-                  <option>Misc.</option>
-                </select>
+                  <select class="field is-pulled-right" name="CategoryOption">
+                    <option>Bakery</option>
+                    <option>Catering</option>
+                    <option>Florist</option>
+                    <option>Jeweler</option>
+                    <option>Music</option>
+                    <option>Officiator</option>
+                    <option>Rentals</option>
+                    <option>Venue</option>
+                    <option>Wedding Attire</option>
+                    <option>Misc.</option>
+                  </select>
+                </label>
               </p>
               <p>
                 <label>
@@ -137,22 +138,27 @@ export default function VendorCaroModal(prop) {
                   ></input>
                 </label>
               </p>
-              <button>Submit</button>
             </form>
           </section>
           <footer className="modal-card-foot">
-            <button className="button is-success">Save changes</button>
-            <button onClick={handleClick} className="button">
+            <button
+              onClick={() => props.onCreateVendor(props.id)}
+              className="button"
+            >
+              Save changes
+            </button>
+            <button onClick={handleClick} className={`button ${close}`}>
               Cancel
             </button>
           </footer>
         </div>
       </div>
-
-      <button onClick={handleClick} className="button is-small is-info">
-        Show Modal
-      </button>
-     {/* <ImportScript/> */}
+      <button
+        onClick={handleClick}
+        className="button is-small is-info"
+      ></button>
+      (<ScriptTag isHydrating={true} type="text/javascript" src="./Script.js" />
+      );
     </div>
   );
 }

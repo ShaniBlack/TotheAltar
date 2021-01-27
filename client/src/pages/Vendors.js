@@ -4,6 +4,7 @@ import API from "../utils/API";
 import "react-bulma-components/dist/react-bulma-components.min.css";
 import { Link } from "react-router-dom";
 import VendorForm from "../components/Forms/VendorForm";
+import VendorCardModal from "../components/VendorCard/VendorCardModal";
 import "./Vendors.css";
 import { useLocation } from "react-router-dom";
 
@@ -14,8 +15,6 @@ export default function Vendors() {
   const [category, setCategory] = useState("");
   const [editVendor, setEditVendor] = useState([]);
 
-  
-  
   const categories = [
     "Bakery",
     "Catering",
@@ -32,7 +31,7 @@ export default function Vendors() {
   let location = useLocation();
 
   useEffect(() => {
-    console.log(location.state.id)
+    //console.log(location.state.id);
     loadVendors();
   }, []);
 
@@ -44,6 +43,7 @@ export default function Vendors() {
       )
     );
   }, [category, vendors, location.state]);
+
   function loadVendors() {
     API.getVendors()
       .then((res) => {
@@ -52,7 +52,7 @@ export default function Vendors() {
       .catch((err) => console.log(err));
   }
 
-    function loadVendor(id) {
+  function loadVendor(id) {
     API.getVendor(id)
       .then((res) => {
         setEditVendor(res.data);
@@ -76,12 +76,18 @@ export default function Vendors() {
                   <a onClick={() => setCategory(category)}>{category}</a>
                 ))}
               </ul>
+              {/* <VendorForm/> */}
               <div className="bg-img">
                 {visible ? (
-                  <VendorForm></VendorForm>
+                  <VendorForm
+                  setFilteredVendors={setFilteredVendors} 
+                  />
                 ) : (
-                  <Link onClick={() => setVisible(true)}>
-                    Create New Vendor +
+                  <Link
+                    class="has-text-weight-bold"
+                    onClick={() => setVisible(true)}
+                  >
+                    Create New Vendor
                   </Link>
                 )}
               </div>

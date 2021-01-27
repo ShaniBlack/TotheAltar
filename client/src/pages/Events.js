@@ -94,13 +94,15 @@ export default function Events() {
             </div>
           </section>
         ))}
-        <div className="create-event">
-          {visible ? (
-            <EventForm></EventForm>
-          ) : (
-            <Link onClick={() => setVisible(true)}>Create New Event +</Link>
-          )}
-        </div>
+        <section>
+          <div className="create-event box">
+            {visible ? (
+              <EventForm />
+            ) : (
+              <Link onClick={() => setVisible(true)}>Create New Event +</Link>
+            )}
+          </div>
+        </section>
       </div>
     </>
   );

@@ -51,6 +51,7 @@ export default function VendorCard(props) {
           >
             Delete
           </button>
+          
           {/* <div class="content has-text-centered"> */}
             <button className="button is-small has-background-danger-light"
             id="edit-btn">

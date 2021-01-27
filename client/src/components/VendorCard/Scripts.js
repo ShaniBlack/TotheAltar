@@ -1,5 +1,5 @@
 const modal = document.querySelector(".modal");
-const btn = document.querySelector("#btn");
+const btn = document.querySelector("#button");
 const close = document.querySelector(".modal-close");
 
 btn.addEventListener("click", function () {
