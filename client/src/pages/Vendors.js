@@ -68,8 +68,17 @@ export default function Vendors() {
   return (
     <>
       <div className="vendors">
-        <div className="columns is-multiline is-fullheight mt-6">
-          <div className="column-gap is-1 position">
+      <section className="hero mt-6">
+          <div className="hero-body is-large">
+            <div className="container welcome-banner has-text-centered is-3 is-fullhd is-4-desktop is-12-tablet is-12-mobile">
+              <h1 class="title" id="user-font">
+                View all your event's vendors here 
+              </h1>
+            </div>
+          </div>
+        </section>
+        <div className="columns is-multiline is-fullheight is-mobile mt-6">
+          <div className="column-gap is-1 position is-5 is-hidden-touch">
             <aside className="menu pt-6">
               <ul className="menu-list">
                 {categories.map((category) => (
@@ -81,16 +90,16 @@ export default function Vendors() {
                   <VendorForm></VendorForm>
                 ) : (
                   <Link onClick={() => setVisible(true)}>
-                    Create New Vendor +
+                    Create New Vendor
                   </Link>
                 )}
               </div>
             </aside>
           </div>
-          <div className="container pt-6 pl-6">
+          <div className="container pt-6 pl-6 pr-6">
             <div className="columns is-multiline">
               {filteredVendors.map((vendor) => (
-                <div className="column is-5 is-offset-1 p-2">
+                <div className="column vendor-resp is-5 is-fullhd is-5-desktop is-12-tablet is-12-mobile is-offset-1 p-2">
                   <VendorCard
                     className="box"
                     deleteCard={deleteCard}

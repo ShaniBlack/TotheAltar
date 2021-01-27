@@ -12,7 +12,7 @@ export default function VendorCard(props) {
   return (
     <div className="card">
       <div className="card-image">
-        <figure className="image is-4by3">
+        <figure className="image is-rounded is-3by2">
           <img
             src="https://images.unsplash.com/photo-1525441273400-056e9c7517b3?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8d2VkZGluZyUyMHRhYmxlfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"
             alt="Placeholder"
@@ -36,7 +36,7 @@ export default function VendorCard(props) {
         </div>
 
         <div className="media-content">
-          <p className="subtitle ">Phone Number: {props.phone}</p>
+          <p className="subtitle">Phone Number: {props.phone}</p>
           <p className="subtitle">Projected Cost: {props.projected_cost}</p>
           <p className="subtitle">Acutal Cost: {props.actual_cost}</p>
           <p className="subtitle">Notes: {props.notes}</p>

@@ -3,18 +3,22 @@ import "react-bulma-components/dist/react-bulma-components.min.css";
 import "./navbar.css";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from "react-router-dom";
+// import Vendors from "../../pages/Vendors.js"
 
-function toggleBurger() {
-  const burger = document.querySelector(".navbar-burger");
-  const menu = document.querySelector(".navbar-menu");
-  burger.addEventListener("click", function () {
-      burger.classList.toggle("is-active")
-      menu.classList.toggle("is-active")
-});
-};
 
 const NavBar = () => {
   const { user, logout } = useAuth0();
+
+  function toggleBurger() {
+    const burger = document.querySelector(".navbar-burger");
+    const menu = document.querySelector(".navbar-menu");
+    burger.addEventListener("click", function () {
+        burger.classList.toggle("is-active")
+        menu.classList.toggle("is-active")
+  });
+};
+
+
   return (
     <nav
       className="navbar is-fixed-top"
@@ -61,6 +65,13 @@ const NavBar = () => {
               >
                 Calendar
               </a>
+              
+              <a
+                className="navbar-item is-hidden"
+                id="navbar-font"
+               >
+              </a>
+
               <Link
                 className="navbar-item "
                 id="navbar-font"
@@ -68,18 +79,17 @@ const NavBar = () => {
               >
                 Log Out
               </Link>
-              {/* <Link
+              <Link
                 className="navbar-item has-text-black"
                 id="navbar-font"
                 to="/login"
               >
                 Log in
-              </Link> */}
-            {/* </div> */}
-            ​
+              </Link> 
+               </div>
           </div>
         </div>
-      </div>
+      {/* </div> */}
     </nav>
   );
 };
