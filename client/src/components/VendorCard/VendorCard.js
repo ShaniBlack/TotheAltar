@@ -5,10 +5,11 @@ import { Link } from "react-router-dom";
 import "./vendorcard.css"
 
 
+import EditVendorCaroModal from "./EditVendorCardModal";
 
 export default function VendorCard(props) {
   const [visible, setVisible] = useState(false);
-  
+
   return (
     <div className="card">
       <div className="card-image">
@@ -42,14 +43,16 @@ export default function VendorCard(props) {
           <p className="subtitle">Notes: {props.notes}</p>
           <a className="view-link" href="../" target="_blank">View Contract  </a>
           <button className="button is-rounded is-small has-background-danger-light" id="delete-btn" onClick={() => props.deleteCard(props.id)}>Delete</button>
-          <button className="button is-rounded is-small has-background-info-light" id="update-btn">
-              {visible ? (
-                <VendorForm class="box"></VendorForm>
-              ) : (
-                <Link id="update-btn" onClick={() => setVisible(true)}>Edit Vendor</Link>
-              )}
-            </button>
-
+          <button
+            className="button is-rounded is-small has-background-info-light"
+            id="update-btn"
+          >
+            {visible ? (
+              <EditVendorCaroModal class="box"></EditVendorCaroModal>
+            ) : (
+              <Link id="update-btn" onClick={() => setVisible(true)}>Edit Vendor</Link>
+            )}
+          </button>
         </div>
       </div>
     </div>
