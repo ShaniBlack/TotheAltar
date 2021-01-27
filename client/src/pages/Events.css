@@ -6,14 +6,9 @@
 }
 
 #user-font {
-    /* color:lightpink; */
 	font-size: 55px;
-    /* -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black; */
     -webkit-text-stroke: 1px black;
 	-webkit-text-fill-color: white;
-    /* font-weight: bold; */
-
 }
 
 .event-hero {
