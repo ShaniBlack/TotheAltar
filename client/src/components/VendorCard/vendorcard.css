@@ -1,47 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+
 .card {
-  background: #fff;
-  border-radius: 2px;
-  height: 325px;
+  font-family: 'Parisienne', cursive;
+  border: 2px solid gray;
+  border-radius: 50px 20px;
+  height: 500;
   margin: 1rem;
   position: relative;
-  width: 325px;
-  box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+  /* width: 500px; */
+  box-shadow: 0 5px 10px #888888, 0 5px 10px #888888;
   text-align: left;
 }
 
-.card > .img-container {
-  height: 60%;
-  overflow: hidden;
-  text-align: center;
-  background:#6CADDC;
-}
-.card > .img-container > img {
-  width: 60%
+.title {
+  font-size: 50px;
+  -webkit-text-stroke: 1px gray;
+	-webkit-text-fill-color: white;
+
 }
 
-.card > .content {
-  padding-left: 1rem;
-  padding-right: 1rem;
+.subtitle {
+  color: black;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.button,
+#delete-btn,
+#update-btn {
+  font-family: 'Parisienne', cursive;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+
+.button {
+  border: 2px solid gray;
+  padding: 10px;
+  border-radius: 2px;
+
+}
+
+.view-link {
+  font-family: "Parisienne", cursive;
+  font-size: 25px;
+}
+
+.vendor-resp.is-12-tablet {
+  font-family: "Parisienne", cursive;
+  font-weight: bold;
   font-size: 15px;
 }
 
-.card > .content > ul {
-  list-style-type: none;
-}
-
-.card > .content > ul > li {
-  margin-top: 18px;
-}
-
-.card > .remove {
-  color: #ff1744;
-  font-size: 48px;
-  position: absolute;
-  top: -20px;
-  right: 5px;
-  cursor: pointer;
-}
-
-.card > .remove:hover {
-  color: #d50000;
+.vendor-resp.is-12-mobile {
+  font-family: "Parisienne", cursive;
+  font-weight: bold;
+  font-size: 10px;
 }

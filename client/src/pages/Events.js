@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import EventForm from "../components/Forms/EventForm";
+import EventFormModal from "../components/Forms/EventFormModal";
 import API from "../utils/API";
 import "./Events.css";
 import { useHistory } from "react-router-dom";
-import { useAuth0 } from "@auth0/auth0-react";
 import Moment from "react-moment";
+import { useAuth0 } from "@auth0/auth0-react";
 
 export default function Events(props) {
   const { user } = useAuth0();
@@ -57,7 +57,7 @@ export default function Events(props) {
       <div className="events">
         <section className="hero mt-6">
           <div className="hero-body is-large">
-            <div className="container has-text-centered is-3 is-fullhd is-4-desktop is-12-tablet is-12-mobile has-text-black">
+            <div className="container welcome-banner has-text-centered is-3 is-fullhd is-4-desktop is-12-tablet is-12-mobile">
               <h1 class="title" id="user-font">
                 Hi {user.name}! Welcome back!
               </h1>
@@ -68,7 +68,7 @@ export default function Events(props) {
         {filteredEvents.map((event) => (
           <section className="hero">
             <div className="hero-body has-bg-image is-medium">
-              <div className="container has-text-centered is-3 is-fullhd is-4-desktop is-12-tablet is-12-mobile has-text-black">
+              <div className="container event-hero has-text-centered is-3 is-fullhd is-4-desktop is-12-tablet is-12-mobile has-text-black">
                 <div className="wrapper" onClick={() => heroClick(event.id)}>
                   <h1
                     className="columns is-centered has-text-weight-bold"
@@ -95,9 +95,9 @@ export default function Events(props) {
             </div>
           </section>
         ))}
-        <div className="create-event">
+        <div className="container create-event has-text-centered is-3 is-fullhd is-4-desktop is-12-tablet is-12-mobile">
           {visible ? (
-            <EventForm></EventForm>
+            <EventFormModal />
           ) : (
             <Link onClick={() => setVisible(true)}>Create New Event +</Link>
           )}

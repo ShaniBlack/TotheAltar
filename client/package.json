@@ -9,13 +9,17 @@
     "axios": "^0.21.1",
     "bulma": "^0.8.2",
     "cors": "^2.8.5",
+    "history": "^5.0.0",
     "moment": "^2.29.1",
     "react": "^16.13.1",
+    "react-bootstrap-modal": "^4.2.0",
     "react-bulma-components": "^3.4.0",
     "react-collapsible": "^2.8.1",
     "react-dom": "^16.13.1",
+    "react-modal": "^3.12.1",
     "react-moment": "^1.1.1",
     "react-router-dom": "^5.2.0",
+    "react-script-tag": "^1.1.2",
     "react-scripts": "3.4.3"
   },
   "scripts": {
@@ -35,5 +39,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10"
   }
 }

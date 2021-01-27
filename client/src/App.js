@@ -7,7 +7,6 @@ import {
 } from "react-router-dom";
 import NavBar from "./components/navbar/NavBar";
 import Login from "./pages/Login";
-import Dashboard from "./pages/Dashboard";
 import { useAuth0 } from "@auth0/auth0-react";
 import Events from "./pages/Events";
 import Vendors from "./pages/Vendors";
@@ -32,9 +31,6 @@ function App() {
         <Switch>
           <Route exact path="/login">
             <Login />
-          </Route>
-          <Route exact path="/dashboard">
-            <Dashboard />
           </Route>
           <Route exact path="/vendors">
             <Vendors currentEventId={currentEventId} />

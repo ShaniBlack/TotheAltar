@@ -27,40 +27,64 @@ function EventForm() {
         <p>
           <label>
             Event Name:
-            <input type="text" name="Name"></input>
+            <input
+              className="field is-pulled-right is-9"
+              type="text"
+              name="Name"
+            ></input>
           </label>
         </p>
         <p>
           <label>
             Event Date:
-            <input type="text" name="Date"></input>
+            <input
+              className="field is-pulled-right"
+              type="text"
+              name="Date"
+            ></input>
           </label>
         </p>
         <p>
           <label>
-            Event Spouse One Name:
-            <input type="text" name="SpouseOneName"></input>
+            Event SpouseOneName:
+            <input
+              className="field is-pulled-right"
+              type="text"
+              name="SpouseOneName"
+            ></input>
           </label>
         </p>
         <p>
           <label>
-            Event Spouse Two Name:
-            <input type="text" name="SpouseTwoName"></input>
+            Event SpouseTwoName:
+            <input
+              className="field is-pulled-right"
+              type="text"
+              name="SpouseTwoName"
+            ></input>
           </label>
         </p>
         <p>
           <label>
             Event Budget:
-            <input type="text" name="Budget"></input>
+            <input
+              className="field is-pulled-right"
+              type="text"
+              name="Budget"
+            ></input>
           </label>
         </p>
         <p>
           <label>
             Event EstGuest:
-            <input type="text" name="EstGuest"></input>
+            <input
+              className="field is-pulled-right"
+              type="text"
+              name="EstGuest"
+            ></input>
           </label>
         </p>
-        <button>Submit</button>
+        <button className="button is-rounded is-medium">Submit</button>
       </form>
     </div>
   );
