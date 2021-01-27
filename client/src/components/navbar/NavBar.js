@@ -7,7 +7,11 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
   const { user, logout } = useAuth0();
   return (
-    <nav className="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <nav
+      className="navbar is-fixed-top"
+      role="navigation"
+      aria-label="main navigation"
+    >
       <div className="container">
         <div className="navbar-brand">
           <figure className="image is-32x32 pt-3">
@@ -27,10 +31,6 @@ const NavBar = () => {
         <div className="navbar-menu">
           <div className="navbar-end">
             <div className="navbar-brand">
-              {/* <figure className="image is-50x25">
-                <img src="../images/alyssa-hurley-rings.jpg" alt="logo_transparent">
-                    </img>
-            </figure> */}
               <a
                 className="navbar-item has-text-black"
                 id="navbar-font"
@@ -38,7 +38,6 @@ const NavBar = () => {
               >
                 Home
               </a>
-              {/* hidden for future features */}
               <a
                 className="navbar-item has-text-black is-hidden"
                 id="navbar-font"
@@ -46,7 +45,6 @@ const NavBar = () => {
               >
                 Budget
               </a>
-              {/* hidden for future features */}
               <a
                 className="navbar-item has-text-black is-hidden"
                 id="navbar-font"
