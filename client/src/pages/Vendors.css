@@ -21,6 +21,16 @@
   margin-left: 20px;
 }
 
+.is-fab {
+  position: fixed;
+}
+
+.has-content-centered {
+  display: flex;
+  align-items: center;
+}
+
+
 /* .vendor-resp.is-12-tablet {
   font-family: "Parisienne", cursive;
   font-weight: bold;

@@ -68,11 +68,11 @@ export default function Vendors() {
       <div className="vendors">
         <section className="hero mt-6">
           <div className="hero-body is-large">
-            <div className="container welcome-banner has-text-centered is-3 is-fullhd is-4-desktop is-12-tablet is-12-mobile">
+            <div className="container welcome-banner is-fab has-text-centered has-content-centered is-3 is-fullhd is-4-desktop is-12-tablet is-12-mobile">
               <h1 className="title" id="user-font">
                 View all your event's vendors here
               </h1>
-              <div class="dropdown is-active">
+              <div class="dropdown is-hidden-tablet">
                 <div class="dropdown-trigger">
                   <button
                     class="button is-rounded"
@@ -84,13 +84,13 @@ export default function Vendors() {
                       <i class="fas fa-angle-down" aria-hidden="true"></i>
                     </span>
                   </button>
-                <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                  <div class="dropdown-content">
-                    {/* how to map through and keep menu items in Dropdown */}
-                    {categories.map((category) => (
-                      <a onClick={() => setCategory(category)}>{category}</a>
+                  <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                    <div class="dropdown-content">
+                      {/* how to map through and keep menu items in Dropdown */}
+                      {categories.map((category) => (
+                        <a onClick={() => setCategory(category)}>{category}</a>
                       ))}
-                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
