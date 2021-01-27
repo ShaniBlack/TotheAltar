@@ -1,9 +1,9 @@
 {
     "development": {
-        "username": "root",
-        "password": "rootroot",
-        "database": "tothealtar",
-        "host": "127.0.0.1",
+        "username": "a7rafuwttagm65js",
+        "password": "vyuxakqtm8r6416k",
+        "database": "mtgusv8mtgr86340",
+        "host": "cis9cbtgerlk68wl.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
         "dialect": "mysql"
     },
     "test": {
