@@ -3,15 +3,20 @@ import "react-bulma-components/dist/react-bulma-components.min.css";
 import "./navbar.css";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from "react-router-dom";
+import { FeedUser } from "semantic-ui-react";
 
 const NavBar = () => {
   const { user, logout } = useAuth0();
   return (
-    <nav className="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <nav
+      className="navbar is-fixed-top"
+      role="navigation"
+      aria-label="main navigation"
+    >
       <div className="container">
         <div className="navbar-brand">
           <figure className="image is-32x32 pt-3">
-          <img className="is-rounded" src={user.picture} alt={user.name} />
+            <img className="is-rounded" src={user.picture} alt={user.name} />
           </figure>
           <p className="login-name py-3">{user.name}</p>
           <div
@@ -27,10 +32,6 @@ const NavBar = () => {
         <div className="navbar-menu">
           <div className="navbar-end">
             <div className="navbar-brand">
-              {/* <figure className="image is-50x25">
-                <img src="../images/alyssa-hurley-rings.jpg" alt="logo_transparent">
-                    </img>
-            </figure> */}
               <a
                 className="navbar-item has-text-black"
                 id="navbar-font"
@@ -38,7 +39,6 @@ const NavBar = () => {
               >
                 Home
               </a>
-              {/* hidden for future features */}
               <a
                 className="navbar-item has-text-black is-hidden"
                 id="navbar-font"
@@ -46,7 +46,6 @@ const NavBar = () => {
               >
                 Budget
               </a>
-              {/* hidden for future features */}
               <a
                 className="navbar-item has-text-black is-hidden"
                 id="navbar-font"

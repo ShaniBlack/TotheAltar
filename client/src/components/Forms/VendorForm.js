@@ -1,6 +1,7 @@
 import React, { Component, useState } from "react";
 import { useHistory } from "react-router-dom";
 import API from "../../utils/API";
+import { useLocation } from "react-router-dom";
 
 function VendorForm() {
   const history = useHistory();
@@ -18,6 +19,8 @@ function VendorForm() {
     Notes: "",
   });
 
+  let location = useLocation();
+
   const onCreateVendor = (e) => {
     e.preventDefault();
     API.saveVendor({
@@ -30,7 +33,9 @@ function VendorForm() {
       actual_cost: e.target.ActualCost.value,
       contract: e.target.Contract.value,
       notes: e.target.Notes.value,
-    }).then(() => history.push("/vendors"));
+      event_id: location.state.id,
+    });
+    // .then(() => history.push("/vendors"));
   };
 
   return (
