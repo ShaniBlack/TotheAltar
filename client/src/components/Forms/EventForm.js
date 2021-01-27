@@ -1,18 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
 import API from "../../utils/API";
 
 function EventForm() {
   const history = useHistory();
 
-  const [Event, setEvent] = useState({
-    Name: "",
-    Date: "",
-    SpouseOneName: "",
-    SpouseTwoName: "",
-    Budget: "",
-    EstGuest: "",
-  });
+  // const [Event, setEvent] = useState({
+  //   Name: "",
+  //   Date: "",
+  //   SpouseOneName: "",
+  //   SpouseTwoName: "",
+  //   Budget: "",
+  //   EstGuest: "",
+  // });
 
   const onCreateEvent = (e) => {
     e.preventDefault();

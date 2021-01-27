@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
 import API from "../../utils/API";
 import VendorCardModal from "../VendorCard/VendorCardModal";
@@ -6,18 +6,18 @@ import VendorCardModal from "../VendorCard/VendorCardModal";
 function VendorForm() {
   const history = useHistory();
 
-  const [Vendors, setVendors] = useState({
-    Name: "",
-    Category: "",
-    ContactName: "",
-    PhoneNumber: "",
-    Email: "",
-    Address: "",
-    ProjectedCost: "",
-    ActualCost: "",
-    Contract: "",
-    Notes: "",
-  });
+  // const [Vendors, setVendors] = useState({
+  //   Name: "",
+  //   Category: "",
+  //   ContactName: "",
+  //   PhoneNumber: "",
+  //   Email: "",
+  //   Address: "",
+  //   ProjectedCost: "",
+  //   ActualCost: "",
+  //   Contract: "",
+  //   Notes: "",
+  // });
 
   const onCreateVendor = (e) => {
     e.preventDefault();

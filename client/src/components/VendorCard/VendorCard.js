@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import Modal from "../modal/Modal";
 import VendorForm from "../../components/Forms/VendorForm";
 import { Link } from "react-router-dom";
-import React from "react";
-// import "../../../src/images";
+
 
 export default function VendorCard(props) {
   const [visible, setVisible] = useState(false);

@@ -5,16 +5,18 @@ import "react-bulma-components/dist/react-bulma-components.min.css";
 import "./Vendors.css";
 import VendorForm from "../components/Forms/VendorForm";
 import { Link } from "react-router-dom";
-
+import { useAuth0 } from "@auth0/auth0-react";
+import { useHistory } from "react-router-dom";
 
 
 export default function Vendors(props) {
   const [vendors, setVendors] = useState([]);
+  const { user } = useAuth0();
   const [editVendor, setEditVendor] = useState([]);
   const [filteredVendors, setFilteredVendors] = useState([]);
   const [category, setCategory] = useState("");
   const [visible, setVisible] = useState(false);
-  //const history = useHistory();
+  const history = useHistory();
 
   const categories = [
     "Bakery",
@@ -65,11 +67,11 @@ export default function Vendors(props) {
       <div className="columns is-multiline is-fullheight">
         <div className="column-gap is-1 position">
           <aside className="menu">
-            <ul className="menu-list">
+            <link className="menu-list">
               {categories.map((category) => (
                 <a onClick={() => setCategory(category)}>{category}</a>
               ))}
-            </ul>
+            </link>
                 <div class="content has-text-centered">
                   <div>
                     {visible ? (

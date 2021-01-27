@@ -5,16 +5,13 @@ import API from "../utils/API";
 import "./Events.css";
 import { useHistory } from "react-router-dom";
 import Moment from "react-moment";
-
 import { useAuth0 } from "@auth0/auth0-react";
-import Moment from "react-moment";
 
 export default function Events() {
   const { user } = useAuth0();
   const [events, setEvents] = useState([]);
   const [visible, setVisible] = useState(false);
   const history = useHistory();
-  const [dbuser, setDbUsers] = useState([]);
 
   useEffect(() => {
     loadEvents();
@@ -26,13 +23,6 @@ export default function Events() {
       .catch((err) => console.log(err));
   }
 
-  function loadUser() {
-    API.getUser()
-      .then((res) => {
-        setDbUsers(res.data);
-      })
-      .catch((err) => console.log(err));
-  }
 
   const heroClick = (id) => {
     history.push("/vendors");
@@ -73,12 +63,6 @@ export default function Events() {
                     <Moment format="dddd, MMMM do, YYYY">
                       {event.event_date}
                     </Moment>
-                  </h1>
-                  <h1
-                    className="columns is-centered has-text-weight-bold"
-                    id="event-font"
-                  >
-                    <Moment format="h:mm a">{event.event_date}</Moment>
                   </h1>
                   <h1
                     className="columns is-centered has-text-weight-bold"
