@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import VendorCard from "../components/VendorCard/VendorCard";
 import API from "../utils/API";
 import "react-bulma-components/dist/react-bulma-components.min.css";
-import Collapsible from "react-collapsible";
 import { Link } from "react-router-dom";
 import VendorForm from "../components/Forms/VendorForm";
 import "./Vendors.css";
+import { useLocation } from "react-router-dom";
 
 export default function Vendors(props) {
   const [vendors, setVendors] = useState([]);
@@ -24,13 +24,20 @@ export default function Vendors(props) {
     "Wedding Attire",
     "Miscellaneous",
   ];
+
+  let location = useLocation();
+
   useEffect(() => {
     loadVendors();
   }, []);
 
   useEffect(() => {
+    console.log(location.state);
     setFilteredVendors(
-      vendors.filter((vendor) => vendor.category === category)
+      vendors.filter(
+        (vendor) =>
+          vendor.category === category && vendor.event_id === location.state.id
+      )
     );
   }, [category, vendors]);
 
@@ -62,7 +69,9 @@ export default function Vendors(props) {
               {visible ? (
                 <VendorForm></VendorForm>
               ) : (
-                <Link onClick={() => setVisible(true)}>Create New Event +</Link>
+                <Link onClick={() => setVisible(true)}>
+                  Create New Vendor +
+                </Link>
               )}
             </div>
           </aside>

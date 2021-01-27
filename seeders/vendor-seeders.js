@@ -14,6 +14,7 @@ module.exports = {
         notes: "Salad, Chicken Alfredo, and Spaghetti is all we would get!!",
         createdAt: new Date(),
         updatedAt: new Date(),
+        event_id: 1,
       },
       {
         category: "Catering",
@@ -25,9 +26,11 @@ module.exports = {
         projected_cost: 900,
         actual_cost: 1050,
         contract: "contract.pdf",
-        notes: "Brisket, Pulled Pork, Potatoe Salad, and Baked Beans would be our choices",
+        notes:
+          "Brisket, Pulled Pork, Potatoe Salad, and Baked Beans would be our choices",
         createdAt: new Date(),
         updatedAt: new Date(),
+        event_id: 2,
       },
       {
         category: "Catering",
@@ -39,9 +42,11 @@ module.exports = {
         projected_cost: 900,
         actual_cost: 1050,
         contract: "contract.pdf",
-        notes: "Brisket, Pulled Pork, Potatoe Salad, and Baked Beans would be our choices",
+        notes:
+          "Brisket, Pulled Pork, Potatoe Salad, and Baked Beans would be our choices",
         createdAt: new Date(),
         updatedAt: new Date(),
+        event_id: 1,
       },
       {
         category: "Catering",
@@ -53,9 +58,11 @@ module.exports = {
         projected_cost: 900,
         actual_cost: 1050,
         contract: "contract.pdf",
-        notes: "Brisket, Pulled Pork, Potatoe Salad, and Baked Beans would be our choices",
+        notes:
+          "Brisket, Pulled Pork, Potatoe Salad, and Baked Beans would be our choices",
         createdAt: new Date(),
         updatedAt: new Date(),
+        event_id: 2,
       },
       {
         category: "Venue",
@@ -70,6 +77,7 @@ module.exports = {
         notes: "Love the layout and includes Security, Valet Parking.",
         createdAt: new Date(),
         updatedAt: new Date(),
+        event_id: 1,
       },
       {
         category: "Florist",
@@ -81,9 +89,11 @@ module.exports = {
         projected_cost: 700,
         actual_cost: 679,
         contract: "contract.pdf",
-        notes: "These guys can provide orchids, bouquets, and floral arrangment for church.",
+        notes:
+          "These guys can provide orchids, bouquets, and floral arrangment for church.",
         createdAt: new Date(),
         updatedAt: new Date(),
+        event_id: 2,
       },
       {
         category: "Venue",
@@ -98,6 +108,7 @@ module.exports = {
         notes: "We would have to take marital classes.",
         createdAt: new Date(),
         updatedAt: new Date(),
+        event_id: 1,
       },
     ]);
   },

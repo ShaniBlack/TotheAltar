@@ -11,10 +11,17 @@ export default function Events() {
   const [events, setEvents] = useState([]);
   const [visible, setVisible] = useState(false);
   const history = useHistory();
+  const [filteredEvents, setFilteredEvents] = useState([]);
 
   useEffect(() => {
     loadEvents();
   }, []);
+
+  useEffect(() => {
+    setFilteredEvents(
+      events.filter((event) => event.user_email === user.email)
+    );
+  }, [user.email, events]);
 
   function loadEvents() {
     API.getEvents()
@@ -23,11 +30,8 @@ export default function Events() {
   }
 
   const heroClick = (id) => {
-    history.push("/vendors");
+    history.push("/vendors", { id });
   };
-  // API.getEvent(id)
-  // .then((res) => setEvents(res.data))
-  // .catch((err) => console.log(err));
 
   return (
     <>
@@ -41,12 +45,12 @@ export default function Events() {
         </div>
       </section>
 
-      {events.map((event) => (
+      {filteredEvents.map((event) => (
         <section className="hero">
           <div className="hero-body has-bg-image is-medium">
             <div className="container has-text-centered is-3 is-fullhd is-4-desktop is-12-tablet is-12-mobile has-text-black">
               <h1 className="title" id="hero-font"></h1>
-              <div className="wrapper" onClick={heroClick}>
+              <div className="wrapper" onClick={() => heroClick(event.id)}>
                 <h1
                   className="columns is-centered has-text-weight-bold"
                   id="event-font"

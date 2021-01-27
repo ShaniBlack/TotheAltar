@@ -3,9 +3,11 @@ import "react-bulma-components/dist/react-bulma-components.min.css";
 import "./navbar.css";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from "react-router-dom";
+import { FeedUser } from "semantic-ui-react";
 
 const NavBar = () => {
   const { logout } = useAuth0();
+  const { user } = useAuth0();
   return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="container">
