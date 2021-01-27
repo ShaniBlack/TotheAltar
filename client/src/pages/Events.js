@@ -24,10 +24,27 @@ export default function Events() {
     );
   }, [user.email, events]);
 
+  function consoleArt() {
+    console.log("-oooooooo/-      .+ooooooooo:  +ooo+        oooo/");
+    console.log("+MMMMMMMMMMm+   -NMMMMMMMMMMs  +MMMM:      /MMMM/");
+    console.log("+MMMNyyydMMMMy  /MMMMyyyyyyy/   mMMMd      mMMMd");
+    console.log("+MMMm    :MMMM. /MMMN           /MMMM/    /MMMM:");
+    console.log("+MMMm    .MMMM- /MMMN            dMMMm    mMMMh");
+    console.log("+MMMm    .MMMM- /MMMMyyyy+       :MMMM/  +MMMM-");
+    console.log("+MMMm    .MMMM- /MMMMMMMMy        hMMMm  NMMMy");
+    console.log("+MMMm    .MMMM- /MMMMoooo:        -MMMM+oMMMM-");
+    console.log("+MMMm    .MMMM- /MMMN              yMMMmNMMMy");
+    console.log("+MMMm    +MMMM. /MMMN              .MMMMMMMM.");
+    console.log("+MMMMdddNMMMMo  /MMMMddddddd+       sMMMMMMs");
+    console.log("+MMMMMMMMMNh:   .mMMMMMMMMMMs        yMMMMs");
+    console.log(".///////:-        -/////////-         .::.");
+  }
+
   function loadEvents() {
     API.getEvents()
       .then((res) => setEvents(res.data))
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err))
+      .then(consoleArt());
   }
 
   const heroClick = (id) => {
@@ -51,7 +68,6 @@ export default function Events() {
           <section className="hero">
             <div className="hero-body has-bg-image is-medium">
               <div className="container has-text-centered is-3 is-fullhd is-4-desktop is-12-tablet is-12-mobile has-text-black">
-                <h1 className="title" id="hero-font"></h1>
                 <div className="wrapper" onClick={() => heroClick(event.id)}>
                   <h1
                     className="columns is-centered has-text-weight-bold"

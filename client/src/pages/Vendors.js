@@ -6,9 +6,8 @@ import { Link } from "react-router-dom";
 import VendorForm from "../components/Forms/VendorForm";
 import "./Vendors.css";
 import { useLocation } from "react-router-dom";
-import vendorsCss from "./Vendors.css";
 
-export default function Vendors(props) {
+export default function Vendors() {
   const [vendors, setVendors] = useState([]);
   const [visible, setVisible] = useState(false);
   const [filteredVendors, setFilteredVendors] = useState([]);
@@ -33,14 +32,13 @@ export default function Vendors(props) {
   }, []);
 
   useEffect(() => {
-    console.log(location.state);
     setFilteredVendors(
       vendors.filter(
         (vendor) =>
           vendor.category === category && vendor.event_id === location.state.id
       )
     );
-  }, [category, vendors]);
+  }, [category, vendors, location.state]);
 
   function loadVendors() {
     API.getVendors()
@@ -62,7 +60,7 @@ export default function Vendors(props) {
         <div className="columns is-multiline is-fullheight mt-6">
           <div className="column-gap is-1 position">
             <aside className="menu pt-6">
-              <ul class="menu-list">
+              <ul className="menu-list">
                 {categories.map((category) => (
                   <a onClick={() => setCategory(category)}>{category}</a>
                 ))}
