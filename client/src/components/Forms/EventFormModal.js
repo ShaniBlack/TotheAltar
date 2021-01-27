@@ -34,7 +34,7 @@ export default function VendorCaroModal(props) {
           </header>
           <section className="modal-card-body">
             <EventForm />
-            <a className="button">Cancel</a>
+            <a className="button is-rounded is-medium">Cancel</a>
           </section>
         </div>
       </div>

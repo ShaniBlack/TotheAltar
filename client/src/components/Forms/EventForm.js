@@ -60,7 +60,7 @@ function EventForm() {
             <input className="field is-pulled-right" type="text" name="EstGuest"></input>
           </label>
         </p>
-        <button>Submit</button>
+        <button className="button is-rounded is-medium">Submit</button>
       </form>
     </div>
   );
