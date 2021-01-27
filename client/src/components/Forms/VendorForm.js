@@ -51,7 +51,7 @@ function VendorForm(props) {
               <option>Rentals</option>
               <option>Venue</option>
               <option>Wedding Attire</option>
-              <option>Misc.</option>
+              <option>Miscellaneous</option>
             </select>
           </label>
         </p>
